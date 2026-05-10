@@ -629,6 +629,376 @@ footer{
   <div class="sec-eyebrow">Exemplos reais</div>
   <div class="sec-title">3 clientes, 3 situações.</div>
   <p class="sec-desc">Veja como o Intelligent Agent resolve cada situação automaticamente, em segundos.</p>
+
+  <!-- ── DEMO COMPONENT ── -->
+  <style>
+  .ia-demo-outer{
+    max-width:960px;margin:0 auto 64px;
+    background:linear-gradient(160deg,#0c1018 0%,#111820 100%);
+    border:1px solid rgba(0,180,220,.18);
+    border-radius:32px;
+    padding:40px 40px 32px;
+    position:relative;overflow:hidden;
+  }
+  .ia-demo-outer::before{
+    content:'DEMONSTRAÇÃO FUNCIONAL IA';
+    position:absolute;top:18px;left:50%;transform:translateX(-50%);
+    font-size:10px;font-weight:600;letter-spacing:.2em;
+    color:rgba(0,200,220,.5);white-space:nowrap;
+  }
+  .ia-demo-inner{
+    margin-top:16px;
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;
+  }
+  @media(max-width:680px){.ia-demo-inner{grid-template-columns:1fr;}.ia-demo-outer{padding:32px 16px 24px;}}
+
+  /* PHONE — WhatsApp style */
+  .ia-phone-outer{
+    max-width:280px;margin:0 auto;
+    position:relative;
+  }
+  /* Phone shell */
+  .ia-phone-shell{
+    background:linear-gradient(160deg,#1a1a2e,#16213e);
+    border-radius:44px;
+    padding:14px 10px;
+    box-shadow:
+      0 0 0 2px rgba(255,255,255,.08),
+      0 24px 64px rgba(0,0,0,.6),
+      0 0 40px rgba(0,180,220,.08);
+    position:relative;
+  }
+  /* Notch */
+  .ia-phone-notch{
+    width:80px;height:20px;
+    background:linear-gradient(160deg,#1a1a2e,#16213e);
+    border-radius:0 0 14px 14px;
+    margin:0 auto 6px;
+    display:flex;align-items:center;justify-content:center;
+    gap:6px;
+  }
+  .ia-notch-cam{
+    width:8px;height:8px;border-radius:50%;
+    background:#0a0a14;border:1px solid rgba(255,255,255,.1);
+  }
+  .ia-notch-speaker{
+    width:36px;height:4px;border-radius:4px;
+    background:#0a0a14;
+  }
+  /* WA Screen */
+  .ia-phone{
+    background:#0b141a;
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+  }
+  /* WA Top bar */
+  .ia-phone-bar{
+    background:#1f2c34;
+    padding:10px 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .ia-phone-back{
+    color:#aaa;font-size:18px;line-height:1;margin-right:2px;
+  }
+  .ia-phone-av{
+    width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,#128c7e,#25d366);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;color:#fff;flex-shrink:0;
+  }
+  .ia-phone-info{flex:1;}
+  .ia-phone-info .ia-phone-name{font-size:13px;font-weight:600;color:#e9edef;}
+  .ia-phone-info .ia-phone-st{font-size:10px;color:#8696a0;margin-top:1px;}
+  .ia-phone-icons{display:flex;gap:14px;color:#aebac1;font-size:16px;}
+  /* WA wallpaper */
+  .ia-phone-feed{
+    background:#0b141a;
+    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding:10px 8px;min-height:340px;max-height:340px;
+    overflow:hidden;display:flex;flex-direction:column;gap:6px;
+  }
+  /* WA bottom bar */
+  .ia-phone-input{
+    background:#1f2c34;
+    padding:8px 10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .ia-phone-input-box{
+    flex:1;background:#2a3942;border-radius:20px;
+    padding:8px 14px;font-size:11px;color:#8696a0;
+  }
+  .ia-phone-mic{
+    width:36px;height:36px;border-radius:50%;
+    background:#00a884;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;flex-shrink:0;
+  }
+  /* Home indicator */
+  .ia-phone-home{
+    width:80px;height:4px;border-radius:4px;
+    background:rgba(255,255,255,.15);
+    margin:8px auto 0;
+  }
+
+  /* BUBBLES */
+  .ia-bubble-wrap{display:flex;flex-direction:column;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;}
+  .ia-bubble-wrap.show{opacity:1;transform:translateY(0);}
+  .ia-bubble-wrap.right{align-items:flex-end;}
+  .ia-bubble-wrap.left{align-items:flex-start;}
+  .ia-bubble{
+    font-size:12.5px;line-height:1.5;padding:9px 13px;
+    border-radius:14px;max-width:86%;
+  }
+  .ia-bubble.client{
+    background:#005c4b;color:#e9edef;font-weight:400;
+    border-radius:8px 8px 3px 8px;
+    position:relative;
+  }
+  .ia-bubble.client::after{
+    content:'✓✓';position:absolute;bottom:4px;right:8px;
+    font-size:9px;color:#53bdeb;
+  }
+  .ia-bubble.agent{
+    background:#202c33;color:#e9edef;
+    border-radius:8px 8px 8px 3px;
+  }
+  .ia-bubble-meta{font-size:9px;color:rgba(255,255,255,.3);margin-top:3px;letter-spacing:.02em;}
+
+  /* TYPING INDICATOR */
+  .ia-typing{
+    display:none;align-items:center;gap:4px;
+    padding:10px 14px;background:#202c33;
+    border-radius:8px 8px 8px 3px;width:fit-content;
+  }
+  .ia-typing.show{display:flex;}
+  .ia-typing span{
+    width:6px;height:6px;border-radius:50%;background:#25d366;
+    animation:iaTypeDot 1s infinite;
+  }
+  .ia-typing span:nth-child(2){animation-delay:.15s;}
+  .ia-typing span:nth-child(3){animation-delay:.3s;}
+  @keyframes iaTypeDot{0%,60%,100%{opacity:.2;transform:scale(.8)}30%{opacity:1;transform:scale(1)}}
+
+  /* RIGHT PANEL */
+  .ia-panel{padding:8px 0;}
+  .ia-panel-title{
+    font-size:clamp(20px,2.5vw,28px);font-weight:700;
+    color:#f0ede8;line-height:1.25;margin-bottom:12px;
+    font-style:italic;
+    transition:opacity .4s;
+  }
+  .ia-panel-desc{
+    font-size:13.5px;color:rgba(240,237,232,.5);line-height:1.7;
+    margin-bottom:22px;transition:opacity .4s;
+  }
+  .ia-panel-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+  .ia-ptag{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    color:#00b4d8;border:1px solid rgba(0,180,220,.3);
+    background:rgba(0,180,220,.07);padding:6px 12px;border-radius:7px;
+    transition:opacity .4s;
+  }
+  .ia-panel-quote{
+    font-size:12.5px;font-style:italic;
+    color:rgba(0,200,220,.75);
+    border-left:2px solid rgba(0,180,220,.35);
+    padding:8px 14px;background:rgba(0,180,220,.04);
+    border-radius:0 7px 7px 0;margin-bottom:24px;
+  }
+  .ia-panel-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,#00b4d8,#005f8a);
+    color:#fff;font-size:12px;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;
+    padding:13px 22px;border-radius:9px;
+    text-decoration:none;transition:.2s;
+  }
+  .ia-panel-cta:hover{box-shadow:0 4px 20px rgba(0,180,220,.4);transform:translateY(-1px);}
+  .ia-panel-dots{
+    font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:rgba(0,200,220,.3);margin-top:20px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .ia-panel-dots::before,.ia-panel-dots::after{content:'●';font-size:5px;}
+  </style>
+
+  <div class="ia-demo-outer">
+    <div class="ia-demo-inner">
+
+      <!-- PHONE — WhatsApp style -->
+      <div class="ia-phone-outer">
+        <div class="ia-phone-shell">
+          <!-- Notch -->
+          <div class="ia-phone-notch">
+            <div class="ia-notch-speaker"></div>
+            <div class="ia-notch-cam"></div>
+          </div>
+          <!-- WA Screen -->
+          <div class="ia-phone">
+            <!-- Top bar -->
+            <div class="ia-phone-bar">
+              <div class="ia-phone-back">‹</div>
+              <div class="ia-phone-av">IA</div>
+              <div class="ia-phone-info">
+                <div class="ia-phone-name">Inteligente Agente</div>
+                <div class="ia-phone-st" id="iaStatus">online</div>
+              </div>
+              <div class="ia-phone-icons">
+                <span>📞</span>
+                <span>⋮</span>
+              </div>
+            </div>
+            <!-- Messages -->
+            <div class="ia-phone-feed" id="iaFeed">
+              <div class="ia-typing" id="iaTyping">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <!-- Input bar -->
+            <div class="ia-phone-input">
+              <div class="ia-phone-input-box">Mensagem</div>
+              <div class="ia-phone-mic">🎤</div>
+            </div>
+          </div>
+          <!-- Home indicator -->
+          <div class="ia-phone-home"></div>
+        </div>
+      </div>
+
+      <!-- PANEL -->
+      <div class="ia-panel">
+        <div class="ia-panel-title" id="iaPanelTitle">Aguardando<br/>mensagem…</div>
+        <div class="ia-panel-desc" id="iaPanelDesc">O sistema está pronto para atender qualquer cliente que enviar uma mensagem pelo WhatsApp, 24 horas por dia.</div>
+        <div class="ia-panel-tags">
+          <div class="ia-ptag" id="iaTag1">● Sistema Ativo</div>
+          <div class="ia-ptag" id="iaTag2">● Aguardando</div>
+        </div>
+        <div class="ia-panel-quote">"Automação completa pelo WhatsApp, ativa em menos de 48h."</div>
+        <a href="#pricing" class="ia-panel-cta">Quero este agente no meu negócio →</a>
+        <div class="ia-panel-dots">Inteligência &nbsp;·&nbsp; Velocidade &nbsp;·&nbsp; Sucesso</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var feed    = document.getElementById('iaFeed');
+    var typing  = document.getElementById('iaTyping');
+    var title   = document.getElementById('iaPanelTitle');
+    var desc    = document.getElementById('iaPanelDesc');
+    var tag1    = document.getElementById('iaTag1');
+    var tag2    = document.getElementById('iaTag2');
+
+    var script = [
+      // [type, text, time_label, panel_title, panel_desc, tag1, tag2, delay_after]
+      ['client','Olá! Gostaria de agendar uma consulta para amanhã.','14:02 · Cliente',
+        'Mensagem<br/>Recebida','Cliente enviou uma mensagem. A IA está analisando a intenção em tempo real.','⚡ NLP Ativo','🔍 Analisando',1200],
+      ['agent', 'Olá! Consultando a agenda... Temos disponibilidade às 10:00, 14:30 e 17:00. Qual prefere?','14:02 · Agente IA',
+        'Consultando<br/>a Agenda','A IA buscou os horários disponíveis no banco de dados e respondeu automaticamente.','📅 Consultando DB','✅ Resposta Enviada',2000],
+      ['client','Pode ser às 14:30. Vocês aceitam cartão?','14:03 · Cliente',
+        'Escolha<br/>Confirmada','Cliente selecionou o horário. A IA processa a confirmação e responde a dúvida.','⚡ Processando','💳 Verificando',1400],
+      ['agent', 'Sim! Aceitamos cartão. Consulta confirmada para amanhã às 14:30. ✅','14:03 · Agente IA',
+        'Consulta<br/>Confirmada!','Horário salvo automaticamente. Lembrete programado para 24h e 1h antes.','✅ Agendado','⏰ Lembrete OK',2400],
+      ['client','Perfeito! Obrigado 😊','14:03 · Cliente',
+        'Conversa<br/>Concluída','Tudo feito sem nenhuma intervenção humana. O negócio ganhou um cliente confirmado.','🎉 Sucesso','🔄 Pronto',1200],
+      ['agent', 'Até amanhã! Vou te lembrar 1 hora antes da sua consulta. 👊','14:03 · Agente IA',
+        'Sistema<br/>Reiniciando','O agente está pronto para o próximo cliente. Funciona 24h, 7 dias por semana.','● Sistema Ativo','● Aguardando',3000],
+    ];
+
+    var current = 0;
+
+    function updatePanel(s){
+      title.style.opacity='0';
+      setTimeout(function(){
+        title.innerHTML = s[3];
+        desc.textContent = s[4];
+        tag1.textContent = s[5];
+        tag2.textContent = s[6];
+        title.style.opacity='1';
+      },200);
+    }
+
+    function addBubble(s){
+      var isClient = s[0]==='client';
+
+      // Show typing for agent
+      if(!isClient){
+        feed.insertBefore(typing, null);
+        typing.classList.add('show');
+        feed.appendChild(typing);
+        feed.scrollTop = feed.scrollHeight;
+      }
+
+      setTimeout(function(){
+        typing.classList.remove('show');
+
+        var wrap = document.createElement('div');
+        wrap.className='ia-bubble-wrap '+(isClient?'right':'left');
+
+        var bub = document.createElement('div');
+        bub.className='ia-bubble '+(isClient?'client':'agent');
+        bub.textContent = s[1];
+
+        var meta = document.createElement('div');
+        meta.className='ia-bubble-meta';
+        meta.textContent = s[2];
+
+        wrap.appendChild(bub);
+        wrap.appendChild(meta);
+        feed.insertBefore(wrap, typing);
+        feed.appendChild(typing);
+
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){
+            wrap.classList.add('show');
+          });
+        });
+
+        feed.scrollTop = feed.scrollHeight;
+        updatePanel(s);
+
+        current++;
+        if(current >= script.length){
+          // Restart after pause
+          setTimeout(function(){
+            current = 0;
+            // Clear bubbles (keep typing indicator)
+            var bubbles = feed.querySelectorAll('.ia-bubble-wrap');
+            bubbles.forEach(function(b){ b.remove(); });
+            title.innerHTML='Aguardando<br/>mensagem…';
+            desc.textContent='O sistema está pronto para atender qualquer cliente que enviar uma mensagem pelo WhatsApp, 24 horas por dia.';
+            tag1.textContent='● Sistema Ativo';
+            tag2.textContent='● Aguardando';
+            setTimeout(run, 800);
+          }, 2000);
+          return;
+        }
+        setTimeout(run, s[7]);
+      }, isClient ? 0 : 900);
+    }
+
+    function run(){
+      if(current >= script.length) return;
+      var s = script[current];
+      if(s[0]==='agent'){
+        typing.classList.add('show');
+        feed.appendChild(typing);
+        feed.scrollTop = feed.scrollHeight;
+        setTimeout(function(){ addBubble(s); }, 900);
+      } else {
+        addBubble(s);
+      }
+    }
+
+    // Start after short delay
+    setTimeout(run, 1200);
+  })();
+  </script>
+  <!-- ── /DEMO COMPONENT ── -->
+
   <div class="demo-grid">
 
     <!-- NOVO AGENDAMENTO -->
