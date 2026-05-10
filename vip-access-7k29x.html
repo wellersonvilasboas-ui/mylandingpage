@@ -272,7 +272,106 @@ button:hover{
   color:#22c55e;
 }
 </style>
+<div class="form-container">
 
+  <h2>Finalizar acesso</h2>
+  <p>Preencha os dados abaixo para continuar.</p>
+
+  <form id="vipForm">
+
+    <label>Nome</label>
+    <input type="text" placeholder="Seu nome" required>
+
+    <label>E-mail</label>
+    <input type="email" placeholder="Seu melhor e-mail" required>
+
+    <label>WhatsApp</label>
+    <input type="tel" placeholder="(11) 99999-9999" required>
+
+    <button type="submit">Enviar e continuar</button>
+
+  </form>
+
+  <p id="msg"></p>
+
+</div>
+
+<style>
+.form-container{
+  max-width:600px;
+  margin:auto;
+  padding:30px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  color:white;
+  font-family:Inter, sans-serif;
+}
+
+.form-container h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.form-container p{
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  margin-top:15px;
+  margin-bottom:5px;
+  font-size:14px;
+  color:#94a3b8;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(0,0,0,0.3);
+  color:white;
+  outline:none;
+}
+
+button{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  opacity:0.9;
+  transform:scale(1.02);
+}
+
+#msg{
+  margin-top:15px;
+  color:#22c55e;
+}
+</style>
+
+<script>
+document.getElementById("vipForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  document.getElementById("msg").innerText =
+  "✔ Enviado com sucesso! Redirecionando...";
+
+  setTimeout(() => {
+    window.location.href = "https://www.inteligenteagente.com/obrigado.html";
+  }, 1500);
+});
+</script>
 <script>
 document.getElementById("vipForm").addEventListener("submit", function(e){
   e.preventDefault();
