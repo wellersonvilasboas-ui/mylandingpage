@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema para Barbearias — Proposta Exclusiva</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --charcoal: #161616;
+    --dark: #1e1e1e;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #7a621e;
+    --cream: #f5ede0;
+    --white: #fafafa;
+    --red: #c0392b;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 60px 24px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+  }
+
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 40px;
+    margin-bottom: 32px;
+    background: rgba(201,168,76,0.05);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 12vw, 130px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: var(--white);
+    animation: fadeUp 0.8s 0.15s ease forwards;
+    opacity: 0;
+  }
+
+  .hero h1 span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 19px);
+    color: rgba(245,237,224,0.55);
+    margin-top: 24px;
+    max-width: 520px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-cta {
+    margin-top: 48px;
+    animation: fadeUp 0.8s 0.45s ease forwards;
+    opacity: 0;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 40px rgba(201,168,76,0.25);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 60px rgba(201,168,76,0.45);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(245,237,224,0.3);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeUp 1s 1s ease forwards;
+    opacity: 0;
+  }
+
+  .scroll-hint .line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.5), transparent);
+    animation: pulse-line 2s ease-in-out infinite;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 100px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 80px);
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  h2 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ── DIAGNÓSTICO ── */
+  .diagnostico {
+    background: var(--charcoal);
+    border-radius: 0;
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diagnostico::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .diag-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .diag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    margin-top: 56px;
+  }
+
+  .diag-card {
+    background: var(--dark);
+    padding: 40px 32px;
+    position: relative;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .diag-card:first-child { border-left: 3px solid var(--gold); }
+
+  .diag-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .diag-label {
+    font-size: 13px;
+    color: rgba(245,237,224,0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .diag-desc {
+    font-size: 14px;
+    color: rgba(245,237,224,0.7);
+    line-height: 1.6;
+  }
+
+  /* ── PERDA ── */
+  .loss-block {
+    margin-top: 60px;
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-radius: 4px;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .loss-text {
+    font-size: 16px;
+    color: rgba(245,237,224,0.8);
+    line-height: 1.8;
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .loss-number {
+    text-align: center;
+  }
+
+  .loss-number .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: #e74c3c;
+    line-height: 1;
+    display: block;
+  }
+
+  .loss-number .small {
+    font-size: 13px;
+    color: rgba(245,237,224,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── FEATURES ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    margin-top: 56px;
+  }
+
+  .feat-card {
+    background: var(--charcoal);
+    padding: 40px 36px;
+    position: relative;
+    transition: background 0.3s;
+    border-top: 1px solid rgba(201,168,76,0.08);
+  }
+
+  .feat-card:hover { background: var(--dark); }
+
+  .feat-icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .feat-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .feat-card p {
+    font-size: 14px;
+    color: rgba(245,237,224,0.6);
+    line-height: 1.8;
+  }
+
+  .feat-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.1);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-top: 16px;
+  }
+
+  /* ── PROJEÇÃO ── */
+  .projection {
+    background: var(--charcoal);
+    padding: 100px 24px;
+  }
+
+  .proj-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .proj-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 56px;
+  }
+
+  @media (max-width: 640px) {
+    .proj-compare { grid-template-columns: 1fr; }
+  }
+
+  .proj-col {
+    padding: 48px 40px;
+  }
+
+  .proj-col.before {
+    background: var(--dark);
+    border-left: 3px solid rgba(192,57,43,0.6);
+  }
+
+  .proj-col.after {
+    background: var(--dark);
+    border-left: 3px solid var(--gold);
+  }
+
+  .proj-col-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .proj-col.before .proj-col-label { color: #e74c3c; }
+  .proj-col.after .proj-col-label { color: var(--gold); }
+
+  .proj-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(245,237,224,0.06);
+    font-size: 14px;
+    color: rgba(245,237,224,0.7);
+  }
+
+  .proj-item .val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .proj-col.before .val { color: rgba(245,237,224,0.4); }
+  .proj-col.after .val { color: var(--gold-light); }
+
+  .proj-total {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .proj-total .label { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+  .proj-col.before .proj-total .label { color: rgba(245,237,224,0.5); }
+  .proj-col.after .proj-total .label { color: var(--gold); }
+
+  .proj-total .total-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+  }
+
+  .proj-col.before .total-val { color: rgba(245,237,224,0.4); }
+  .proj-col.after .total-val { color: var(--gold); }
+
+  /* ── ROI STRIP ── */
+  .roi-strip {
+    max-width: 1100px;
+    margin: 2px auto 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 32px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .roi-text { font-size: 15px; color: rgba(245,237,224,0.8); flex: 1; min-width: 200px; }
+  .roi-text strong { color: var(--gold-light); }
+
+  .roi-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  /* ── TESTIMONIAL / SOCIAL PROOF ── */
+  .proof {
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .proof-card {
+    background: var(--charcoal);
+    padding: 36px;
+  }
+
+  .stars { color: var(--gold); font-size: 18px; margin-bottom: 16px; }
+
+  .proof-quote {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(245,237,224,0.7);
+    font-style: italic;
+  }
+
+  .proof-author {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(245,237,224,0.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── PRICING ── */
+  .pricing-wrap {
+    padding: 100px 24px;
+    background: var(--black);
+    text-align: center;
+  }
+
+  .pricing-inner { max-width: 600px; margin: 0 auto; }
+
+  .price-card {
+    background: var(--charcoal);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 56px 48px;
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .price-popular {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+
+  .price-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 96px;
+    color: var(--gold);
+    line-height: 1;
+    margin: 16px 0;
+  }
+
+  .price-amount sup {
+    font-size: 36px;
+    vertical-align: top;
+    margin-top: 16px;
+  }
+
+  .price-per {
+    font-size: 14px;
+    color: rgba(245,237,224,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .price-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .price-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(245,237,224,0.06);
+    font-size: 14px;
+    color: rgba(245,237,224,0.7);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .price-features li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .btn-cta {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 40px rgba(201,168,76,0.3);
+    text-align: center;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 60px rgba(201,168,76,0.5);
+  }
+
+  .price-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(245,237,224,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* ── GARANTIA ── */
+  .garantia {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 24px 100px;
+  }
+
+  .garantia-icon { font-size: 56px; margin-bottom: 16px; display: block; }
+
+  .garantia h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .garantia p {
+    font-size: 15px;
+    color: rgba(245,237,224,0.6);
+    line-height: 1.8;
+  }
+
+  /* ── DIVIDER ── */
+  .gold-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(245,237,224,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.5; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── COUNTER ── */
+  .counter { display: inline-block; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    section { padding: 72px 20px; }
+    .diag-grid { grid-template-columns: 1fr 1fr; }
+    .loss-block { flex-direction: column; text-align: center; }
+    .price-card { padding: 40px 28px; }
+    .price-amount { font-size: 72px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="badge">Proposta Exclusiva · 2026</div>
+  <h1>
+    Sua Barbearia<br>
+    <span>No Próximo Nível</span>
+  </h1>
+  <p class="hero-sub">Descubra como um sistema inteligente pode transformar seus agendamentos — e multiplicar seu faturamento — sem que você precise fazer nada.</p>
+  <div class="hero-cta">
+    <a href="#preco" class="btn-gold">Ver a Proposta Completa</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Role para baixo</span>
+    <div class="line"></div>
+  </div>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- DIAGNÓSTICO ATUAL -->
+<div class="diagnostico">
+  <div class="diag-inner">
+    <div class="section-label">Situação Atual</div>
+    <h2>O Que Está <em>Acontecendo</em> Hoje</h2>
+    <p style="font-size:15px;color:rgba(245,237,224,0.55);max-width:560px;line-height:1.8;">Antes de apresentar a solução, precisamos olhar com honestidade para os números da sua operação atual.</p>
+
+    <div class="diag-grid">
+      <div class="diag-card">
+        <div class="diag-number">5</div>
+        <div class="diag-label">Clientes por dia</div>
+        <div class="diag-desc">De seg. a sex., sua cadeira recebe em média 5 clientes — um número que pode crescer muito.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-number">10</div>
+        <div class="diag-label">Clientes no sábado</div>
+        <div class="diag-desc">Sábado é seu dia mais forte. Mas agendas manuais significam buracos e clientes que desistem.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-number">$40</div>
+        <div class="diag-label">Ticket médio</div>
+        <div class="diag-desc">Cada cliente vale $40. Cada "não apareceu" é um valor desperdiçado — sem recuperação.</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-number">0</div>
+        <div class="diag-label">Horas de automação</div>
+        <div class="diag-desc">Hoje, sem sistema, cada agendamento depende de você ou de um funcionário respondendo manualmente.</div>
+      </div>
+    </div>
+
+    <div class="loss-block reveal">
+      <div class="loss-text">
+        <strong style="color:var(--cream);">O problema real:</strong><br>
+        Com agendamentos manuais, estimamos que você perde pelo menos <strong style="color:#e74c3c;">2 a 3 clientes por semana</strong> — entre faltas sem aviso, horários que ficam vagos e pessoas que não conseguem marcar fora do horário comercial.
+        <br><br>
+        Isso representa um prejuízo silencioso que se acumula todo mês.
+      </div>
+      <div class="loss-number">
+        <span class="big">$480</span>
+        <span class="small">Perda estimada / mês</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- FEATURES -->
+<section class="reveal">
+  <div class="section-label">A Solução</div>
+  <h2>Um Sistema que <em>Trabalha</em><br>por Você — 24 Horas</h2>
+  <p style="font-size:15px;color:rgba(245,237,224,0.55);max-width:560px;line-height:1.8;margin-bottom:8px;">Enquanto você dorme, o sistema agenda, confirma, lembra e organiza. Tudo automático.</p>
+
+  <div class="features-grid">
+    <div class="feat-card">
+      <span class="feat-icon">🕐</span>
+      <h3>Agenda 24H</h3>
+      <p>Seu cliente agenda a qualquer hora — de madrugada, no fim de semana, no feriado. Sem depender de você estar online. Nunca mais perca um agendamento por horário.</p>
+      <span class="feat-tag">Disponível 24/7</span>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🔄</span>
+      <h3>Reagenda & Cancela</h3>
+      <p>O próprio cliente reagenda ou cancela com antecedência. Você recebe aviso imediato e o horário fica disponível para outra pessoa — acabou o buraco na agenda.</p>
+      <span class="feat-tag">Automático</span>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">📅</span>
+      <h3>Horários em Tempo Real</h3>
+      <p>O sistema exibe exatamente quais horários estão disponíveis. Sem duplos agendamentos, sem confusão, sem ligações desnecessárias para confirmar.</p>
+      <span class="feat-tag">Sempre Atualizado</span>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">👥</span>
+      <h3>CRM de Clientes</h3>
+      <p>Histórico completo de cada cliente: quantas vezes veio, qual serviço preferiu, data do último atendimento. Personalize o atendimento e fidelize de verdade.</p>
+      <span class="feat-tag">Inteligência</span>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">📆</span>
+      <h3>Google Calendar</h3>
+      <p>Todos os agendamentos sincronizam automaticamente com o Google Calendar. Acompanhe sua agenda no celular, receba lembretes e nunca perca um compromisso.</p>
+      <span class="feat-tag">Integrado</span>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🔔</span>
+      <h3>Lembretes Automáticos</h3>
+      <p>O sistema envia lembretes automáticos para o cliente antes do horário — reduzindo drasticamente as faltas e os "esqueci" que custam dinheiro.</p>
+      <span class="feat-tag">Reduz No-shows</span>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- PROJEÇÃO FINANCEIRA -->
+<div class="projection">
+  <div class="proj-inner reveal">
+    <div class="section-label">Projeção Financeira</div>
+    <h2>Antes vs. <em>Depois</em><br>do Sistema</h2>
+    <p style="font-size:15px;color:rgba(245,237,224,0.55);max-width:560px;line-height:1.8;">Veja o impacto real nos seus números — com uma estimativa conservadora de crescimento.</p>
+
+    <div class="proj-compare">
+      <div class="proj-col before">
+        <div class="proj-col-label">— Sem o Sistema</div>
+        <div class="proj-item">
+          <span>Clientes/semana (est.)</span>
+          <span class="val">30</span>
+        </div>
+        <div class="proj-item">
+          <span>Ticket médio</span>
+          <span class="val">$40</span>
+        </div>
+        <div class="proj-item">
+          <span>Faltas / semana (est.)</span>
+          <span class="val">3</span>
+        </div>
+        <div class="proj-item">
+          <span>Perda por faltas/mês</span>
+          <span class="val">$480</span>
+        </div>
+        <div class="proj-item">
+          <span>Horários vagos/mês</span>
+          <span class="val">12+</span>
+        </div>
+        <div class="proj-total">
+          <span class="label">Faturamento/mês</span>
+          <span class="total-val">$4.800</span>
+        </div>
+      </div>
+
+      <div class="proj-col after">
+        <div class="proj-col-label">+ Com o Sistema</div>
+        <div class="proj-item">
+          <span>Clientes/semana (projeção)</span>
+          <span class="val">40+</span>
+        </div>
+        <div class="proj-item">
+          <span>Ticket médio</span>
+          <span class="val">$40</span>
+        </div>
+        <div class="proj-item">
+          <span>Faltas / semana (est.)</span>
+          <span class="val">0–1</span>
+        </div>
+        <div class="proj-item">
+          <span>Perda por faltas/mês</span>
+          <span class="val">~$0</span>
+        </div>
+        <div class="proj-item">
+          <span>Horários vagos/mês</span>
+          <span class="val">Zero</span>
+        </div>
+        <div class="proj-total">
+          <span class="label">Faturamento/mês</span>
+          <span class="total-val">$6.400+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="roi-strip reveal">
+    <div class="roi-text">
+      Com o sistema, a projeção é de um crescimento de <strong>+$1.600 por mês</strong> — apenas com a redução de faltas e preenchimento dos horários vagos que o sistema gerencia automaticamente.
+    </div>
+    <div class="roi-val">+1.600<span style="font-size:28px;color:var(--gold-dim)">/mês</span></div>
+  </div>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- PROVA SOCIAL -->
+<section class="proof reveal">
+  <div class="section-label">Resultados Reais</div>
+  <h2>O Que Outros<br><em>Barbeiros</em> Dizem</h2>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="stars">★★★★★</div>
+      <p class="proof-quote">"Antes eu perdia 4 ou 5 clientes por semana porque não conseguia responder WhatsApp enquanto cortava. Agora o sistema resolve tudo sozinho."</p>
+      <div class="proof-author">— Ricardo M., Barbearia Estilo</div>
+    </div>
+    <div class="proof-card">
+      <div class="stars">★★★★★</div>
+      <p class="proof-quote">"O sábado era um caos. Hoje minha agenda fecha sozinha na quinta-feira. Não tem mais aquele stress de confirmar cliente por cliente."</p>
+      <div class="proof-author">— Felipe S., BarberShop Downtown</div>
+    </div>
+    <div class="proof-card">
+      <div class="stars">★★★★★</div>
+      <p class="proof-quote">"O CRM me mostrou que meus melhores clientes sumiam depois de 30 dias. Agora eu sei exatamente quando devo mandar um lembrete."</p>
+      <div class="proof-author">— André P., Corte & Arte</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- PREÇO -->
+<div class="pricing-wrap" id="preco">
+  <div class="pricing-inner reveal">
+    <div class="section-label" style="justify-content:center;">Investimento</div>
+    <h2>Uma Decisão<br><em>Simples</em></h2>
+    <p style="font-size:15px;color:rgba(245,237,224,0.55);line-height:1.8;">O sistema que trabalha por você — agendando, lembrando e organizando — por menos do que 3 clientes pagam por mês.</p>
+
+    <div class="price-card">
+      <div class="price-popular">Mais Popular</div>
+      <div class="price-name">Plano Barbearia Pro</div>
+      <div class="price-amount"><sup>$</sup>97</div>
+      <div class="price-per">por mês · cancele quando quiser</div>
+
+      <ul class="price-features">
+        <li>Agendamento online 24 horas por dia</li>
+        <li>Reagendamento e cancelamento automáticos</li>
+        <li>Exibição de horários disponíveis em tempo real</li>
+        <li>CRM completo de clientes</li>
+        <li>Integração com Google Calendar</li>
+        <li>Lembretes automáticos (reduz no-shows)</li>
+        <li>Suporte dedicado</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/7sYaEW2ZQ6UX7Qk2Eb9EI06" class="btn-cta" target="_blank">
+        ✦ &nbsp; Quero Começar Agora por $97/mês
+      </a>
+      <p class="price-note">Pagamento seguro via Stripe · Sem taxa de adesão · Cancele quando quiser</p>
+    </div>
+  </div>
+</div>
+
+<!-- GARANTIA -->
+<div class="garantia reveal">
+  <span class="garantia-icon">🛡️</span>
+  <h3>Sem Risco para Você</h3>
+  <p>Se em 30 dias o sistema não atender às suas expectativas, basta entrar em contato e cancelamos sem burocracia. Você não tem nada a perder — e um faturamento muito maior a ganhar.</p>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Proposta elaborada especialmente para você · Sistema para Barbearias · 2026</p>
+  <p style="margin-top:8px;">Acesse: <a href="https://buy.stripe.com/4gMfZg43Ugvxc6Aa6D9EI04" style="color:var(--gold-dim);text-decoration:none;">buy.stripe.com</a></p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
