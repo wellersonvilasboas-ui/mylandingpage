@@ -45,483 +45,186 @@ nav{
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
 }
-.nav-logo{
-  font-size:15px;font-weight:600;letter-spacing:.02em;
-  color:var(--text);
-}
+.nav-logo{font-size:15px;font-weight:600;letter-spacing:.02em;color:var(--text);}
 .nav-logo span{color:var(--gold);}
 .nav-links{display:flex;align-items:center;gap:32px;}
 .nav-links a{font-size:13px;color:var(--text2);transition:color .2s;}
 .nav-links a:hover{color:var(--text);}
-.nav-cta{
-  font-size:13px;font-weight:500;
-  background:var(--gold);color:#000;
-  padding:8px 20px;border-radius:8px;
-  transition:.2s;
-}
+.nav-cta{font-size:13px;font-weight:500;background:var(--gold);color:#000;padding:8px 20px;border-radius:8px;transition:.2s;}
 .nav-cta:hover{background:var(--gold2);}
 
 /* ── HERO ── */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;
-  padding:100px 24px 60px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,.12) 0%, transparent 70%);
-  pointer-events:none;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;color:var(--gold);
-  background:rgba(201,168,76,.1);
-  border:1px solid rgba(201,168,76,.2);
-  padding:6px 14px;border-radius:999px;
-  margin-bottom:32px;letter-spacing:.02em;
-}
-.hero-badge::before{
-  content:'✦';font-size:10px;
-}
-.hero h1{
-  font-size:clamp(44px,7vw,88px);
-  font-weight:700;line-height:1.0;
-  letter-spacing:-.03em;
-  margin-bottom:12px;
-}
-.hero h1 .sub-line{
-  display:block;
-  font-size:clamp(22px,3.5vw,44px);
-  font-weight:400;
-  color:var(--text2);
-  letter-spacing:-.01em;
-  margin-top:8px;
-}
-.hero h1 .highlight{
-  background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold3));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.hero-desc{
-  font-size:16px;color:var(--text2);
-  max-width:520px;line-height:1.7;
-  margin:24px auto 40px;
-}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,.12) 0%, transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);padding:6px 14px;border-radius:999px;margin-bottom:32px;letter-spacing:.02em;}
+.hero-badge::before{content:'✦';font-size:10px;}
+.hero h1{font-size:clamp(44px,7vw,88px);font-weight:700;line-height:1.0;letter-spacing:-.03em;margin-bottom:12px;}
+.hero h1 .sub-line{display:block;font-size:clamp(22px,3.5vw,44px);font-weight:400;color:var(--text2);letter-spacing:-.01em;margin-top:8px;}
+.hero h1 .highlight{background:linear-gradient(135deg,var(--gold2),var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:16px;color:var(--text2);max-width:520px;line-height:1.7;margin:24px auto 40px;}
 .hero-btns{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;}
-.btn-primary{
-  background:var(--gold);color:#000;
-  font-size:14px;font-weight:600;
-  padding:13px 28px;border-radius:10px;
-  transition:.2s;
-}
+.btn-primary{background:var(--gold);color:#000;font-size:14px;font-weight:600;padding:13px 28px;border-radius:10px;transition:.2s;}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-1px);}
-.btn-secondary{
-  background:transparent;
-  border:1px solid var(--border2);
-  color:var(--text);
-  font-size:14px;font-weight:500;
-  padding:13px 28px;border-radius:10px;
-  transition:.2s;
-}
+.btn-secondary{background:transparent;border:1px solid var(--border2);color:var(--text);font-size:14px;font-weight:500;padding:13px 28px;border-radius:10px;transition:.2s;}
 .btn-secondary:hover{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.04);}
 
 /* ── STATS ── */
-.stats{
-  display:flex;flex-wrap:wrap;justify-content:center;
-  gap:0;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.stat{
-  flex:1;min-width:140px;
-  text-align:center;
-  padding:36px 20px;
-  border-right:1px solid var(--border);
-}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stat{flex:1;min-width:140px;text-align:center;padding:36px 20px;border-right:1px solid var(--border);}
 .stat:last-child{border-right:none;}
-.stat-n{
-  font-size:42px;font-weight:700;
-  letter-spacing:-.03em;
-  color:var(--gold);line-height:1;
-  margin-bottom:6px;
-}
+.stat-n{font-size:42px;font-weight:700;letter-spacing:-.03em;color:var(--gold);line-height:1;margin-bottom:6px;}
 .stat-l{font-size:12px;color:var(--text3);letter-spacing:.04em;text-transform:uppercase;}
 
 /* ── SECTIONS ── */
 .section{padding:96px 24px;max-width:1100px;margin:0 auto;}
 .section-dark{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .section-dark .section{padding:96px 24px;}
-.sec-eyebrow{
-  font-size:11px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--gold);
-  margin-bottom:12px;
-}
-.sec-title{
-  font-size:clamp(28px,4vw,48px);
-  font-weight:700;letter-spacing:-.02em;
-  line-height:1.1;margin-bottom:16px;
-}
+.sec-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sec-title{font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px;}
 .sec-desc{font-size:15px;color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:56px;}
 
 /* ── SEGMENTS ── */
-.segments{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:12px;
-}
-.seg{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:20px 16px;
-  text-align:center;
-  transition:.2s;
-}
+.segments{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.seg{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:20px 16px;text-align:center;transition:.2s;}
 .seg:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);}
 .seg-icon{font-size:28px;margin-bottom:10px;}
 .seg-name{font-size:13px;font-weight:600;margin-bottom:4px;}
 .seg-desc{font-size:12px;color:var(--text3);}
 
 /* ── HOW IT WORKS ── */
-.steps{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-}
-.step{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:28px 24px;
-  position:relative;overflow:hidden;
-}
-.step-num{
-  font-size:80px;font-weight:800;
-  color:rgba(255,255,255,.04);
-  position:absolute;top:8px;right:16px;
-  line-height:1;letter-spacing:-.04em;
-}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.step{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden;}
+.step-num{font-size:80px;font-weight:800;color:rgba(255,255,255,.04);position:absolute;top:8px;right:16px;line-height:1;letter-spacing:-.04em;}
 .step-icon{font-size:28px;margin-bottom:14px;}
 .step-title{font-size:16px;font-weight:600;margin-bottom:6px;}
 .step-desc{font-size:13px;color:var(--text2);line-height:1.6;}
 
 /* ── DEMO CHATS ── */
-.demo-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-  align-items:start;
-}
-.demo-card{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:20px;
-  overflow:hidden;
-}
-.demo-header{
-  display:flex;align-items:center;gap:10px;
-  padding:14px 18px;
-  background:rgba(255,255,255,.03);
-  border-bottom:1px solid var(--border);
-}
-.demo-av{
-  width:32px;height:32px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold3),var(--gold));
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;color:#000;flex-shrink:0;
-}
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start;}
+.demo-card{background:var(--bg3);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.demo-header{display:flex;align-items:center;gap:10px;padding:14px 18px;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);}
+.demo-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold3),var(--gold));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#000;flex-shrink:0;}
 .demo-hname{font-size:13px;font-weight:600;}
 .demo-hstatus{font-size:10px;color:var(--text3);display:flex;align-items:center;gap:4px;margin-top:1px;}
 .demo-dot{width:5px;height:5px;border-radius:50%;background:#25d366;flex-shrink:0;animation:blink 2s infinite;}
 .demo-dot-gold{background:var(--gold);}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.demo-htag{
-  margin-left:auto;
-  font-size:10px;color:var(--gold);
-  background:rgba(201,168,76,.1);
-  border:1px solid rgba(201,168,76,.2);
-  padding:3px 10px;border-radius:999px;
-  white-space:nowrap;
-}
+.demo-htag{margin-left:auto;font-size:10px;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);padding:3px 10px;border-radius:999px;white-space:nowrap;}
 .demo-msgs{padding:16px;display:flex;flex-direction:column;gap:8px;}
 .dm{max-width:85%;font-size:13px;line-height:1.5;padding:9px 13px;border-radius:12px;}
-.dm-user{
-  background:rgba(255,255,255,.08);color:var(--text);
-  border-radius:12px 12px 3px 12px;margin-left:auto;text-align:right;
-}
-.dm-agent{
-  background:rgba(201,168,76,.1);
-  border:1px solid rgba(201,168,76,.15);
-  color:var(--text);
-  border-radius:12px 12px 12px 3px;
-}
+.dm-user{background:rgba(255,255,255,.08);color:var(--text);border-radius:12px 12px 3px 12px;margin-left:auto;text-align:right;}
+.dm-agent{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.15);color:var(--text);border-radius:12px 12px 12px 3px;}
 .dm-agent strong{color:var(--gold);}
 .dm-time{text-align:center;font-size:10px;color:var(--text3);margin:4px 0;}
-.demo-footer{
-  padding:10px 18px;
-  border-top:1px solid var(--border);
-  font-size:11px;color:var(--gold);
-  letter-spacing:.02em;text-align:center;
-}
+.demo-footer{padding:10px 18px;border-top:1px solid var(--border);font-size:11px;color:var(--gold);letter-spacing:.02em;text-align:center;}
 
 /* ── FEATURES ── */
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:12px;
-}
-.feat{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:24px 20px;
-  transition:.2s;
-  position:relative;overflow:hidden;
-}
-.feat::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(201,168,76,.05),transparent);
-  opacity:0;transition:.2s;
-}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+.feat{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;transition:.2s;position:relative;overflow:hidden;}
+.feat::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.05),transparent);opacity:0;transition:.2s;}
 .feat:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);}
 .feat:hover::after{opacity:1;}
 .feat-icon{font-size:24px;margin-bottom:12px;}
 .feat-title{font-size:15px;font-weight:600;margin-bottom:6px;}
 .feat-desc{font-size:13px;color:var(--text2);line-height:1.6;}
-.feat-badge{
-  display:inline-block;margin-top:12px;
-  font-size:10px;color:var(--gold);
-  background:rgba(201,168,76,.1);
-  border:1px solid rgba(201,168,76,.18);
-  padding:3px 10px;border-radius:999px;
-  letter-spacing:.04em;
-}
-.feat-cta{
-  grid-column:1/-1;
-  text-align:center;padding:24px;
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-}
-.feat-cta a{
-  display:inline-block;
-  font-size:13px;font-weight:500;
-  color:var(--gold);
-  border:1px solid rgba(201,168,76,.3);
-  padding:10px 24px;border-radius:8px;
-  transition:.2s;
-}
-.feat-cta a:hover{background:rgba(201,168,76,.08);}
+.feat-badge{display:inline-block;margin-top:12px;font-size:10px;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.18);padding:3px 10px;border-radius:999px;letter-spacing:.04em;}
 
 /* ── CTA MID ── */
-.cta-mid{
-  background:var(--bg2);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:72px 24px;text-align:center;
-}
+.cta-mid{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 24px;text-align:center;}
 .cta-mid h2{font-size:clamp(24px,3.5vw,40px);font-weight:700;letter-spacing:-.02em;margin-bottom:12px;}
 .cta-mid p{font-size:15px;color:var(--text2);max-width:440px;margin:0 auto 32px;line-height:1.7;}
 .cta-mid-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 .cta-pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:24px;}
 .cta-pill{font-size:11px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:6px 14px;border-radius:999px;}
 
-/* ── PLANS ── */
-.plans-wrap{padding:96px 24px;max-width:1100px;margin:0 auto;}
-.plans-header{text-align:center;margin-bottom:48px;}
-.plans-note-top{font-size:13px;color:var(--text3);margin-top:8px;}
-.plans-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-bottom:20px;
-}
-@media(max-width:860px){.plans-grid{grid-template-columns:1fr;}}
-.plan{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:32px 28px;
-  display:flex;flex-direction:column;
-  transition:.25s;position:relative;overflow:hidden;
-}
-.plan:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px);}
-.plan-pop{
-  border-color:rgba(201,168,76,.45);
+/* ── PLANO ÚNICO ── */
+.plan-unico-wrap{padding:96px 24px;max-width:800px;margin:0 auto;}
+.plan-unico-header{text-align:center;margin-bottom:48px;}
+.plan-unico-card{
   background:linear-gradient(160deg,#1c1806,var(--bg3));
+  border:2px solid rgba(201,168,76,.5);
+  border-radius:28px;
+  padding:48px 40px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
 }
-.plan-pop-badge{
-  position:absolute;top:14px;right:14px;
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#000;font-size:10px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;padding:4px 12px;border-radius:999px;
+.plan-unico-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,.08),transparent);
+  pointer-events:none;
 }
-.plan-name{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-.plan-price{font-size:48px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--text);margin-bottom:4px;}
-.plan-price sup{font-size:20px;vertical-align:top;margin-top:8px;display:inline-block;font-weight:400;}
-.plan-price sub{font-size:16px;color:var(--text2);font-weight:400;}
-.plan-setup{font-size:12px;color:var(--text3);margin-bottom:24px;}
-.plan-div{height:1px;background:var(--border);margin-bottom:24px;}
-.plan-feats{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:28px;}
-.plan-feats li{
-  display:flex;align-items:flex-start;gap:9px;
-  font-size:13px;color:rgba(240,237,232,.75);line-height:1.4;
-}
-.plan-feats li::before{content:'✓';color:var(--gold);flex-shrink:0;margin-top:1px;font-weight:700;}
-.plan-feats li.no{color:var(--text3);}
-.plan-feats li.no::before{content:'—';color:rgba(255,255,255,.15);}
-.plan-btn{
-  display:block;text-align:center;
-  padding:13px;border-radius:10px;
-  font-size:14px;font-weight:600;
-  transition:.2s;text-decoration:none;
-  margin-top:auto;
-}
-.plan-btn-out{border:1px solid rgba(201,168,76,.35);color:var(--gold);background:transparent;}
-.plan-btn-out:hover{background:rgba(201,168,76,.08);}
-.plan-btn-fill{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;border:none;}
-.plan-btn-fill:hover{box-shadow:0 4px 20px rgba(201,168,76,.3);transform:translateY(-1px);}
-
-/* PLAN CUSTOM */
-.plan-custom-wrap{
-  background:linear-gradient(135deg,rgba(201,168,76,.06),var(--bg3));
-  border:1px solid rgba(201,168,76,.25);
-  border-radius:20px;
-  padding:32px 36px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:28px;
-  align-items:center;
-  transition:.2s;
-}
-.plan-custom-wrap:hover{border-color:rgba(201,168,76,.4);}
-@media(max-width:700px){.plan-custom-wrap{grid-template-columns:1fr;}}
-.plan-custom-left{}
-.plan-custom-tag{
+.plan-unico-badge{
   display:inline-flex;align-items:center;gap:6px;
-  font-size:10px;font-weight:600;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--gold);
-  background:rgba(201,168,76,.12);
-  border:1px solid rgba(201,168,76,.25);
-  padding:4px 12px;border-radius:999px;
-  margin-bottom:12px;
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);
+  padding:5px 14px;border-radius:999px;margin-bottom:24px;
 }
-.plan-custom-tag::before{
-  content:'';width:5px;height:5px;background:var(--gold);
-  border-radius:50%;animation:blink 2s infinite;
+.plan-unico-nome{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.plan-unico-price{
+  font-size:clamp(72px,12vw,100px);
+  font-weight:800;letter-spacing:-.04em;
+  line-height:1;color:var(--text);
+  margin-bottom:4px;
 }
-.plan-custom-name{font-size:24px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px;}
-.plan-custom-sub{font-size:13px;color:var(--text2);margin-bottom:20px;}
-.plan-custom-feats{
-  display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;
-  list-style:none;
+.plan-unico-price sup{font-size:32px;vertical-align:top;margin-top:16px;display:inline-block;font-weight:500;color:var(--gold);}
+.plan-unico-price sub{font-size:22px;color:var(--text2);font-weight:400;}
+.plan-unico-desc{font-size:14px;color:var(--text2);margin-bottom:40px;line-height:1.6;}
+.plan-unico-feats{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;
+  list-style:none;text-align:left;
+  max-width:600px;margin:0 auto 40px;
 }
-@media(max-width:500px){.plan-custom-feats{grid-template-columns:1fr;}}
-.plan-custom-feats li{
-  display:flex;align-items:flex-start;gap:8px;
-  font-size:13px;color:rgba(240,237,232,.75);line-height:1.4;
+@media(max-width:560px){.plan-unico-feats{grid-template-columns:1fr;}}
+.plan-unico-feats li{
+  display:flex;align-items:flex-start;gap:9px;
+  font-size:13px;color:rgba(240,237,232,.8);line-height:1.45;
 }
-.plan-custom-feats li::before{content:'✓';color:var(--gold);flex-shrink:0;font-weight:700;margin-top:1px;}
-.plan-custom-right{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:180px;}
-.plan-custom-price{font-size:22px;font-weight:700;color:var(--text);text-align:center;line-height:1.2;}
-.plan-custom-price small{display:block;font-size:12px;font-weight:400;color:var(--text3);margin-top:4px;}
-.btn-whatsapp{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  background:linear-gradient(135deg,#1da851,#25d366);
-  color:#fff;font-size:14px;font-weight:600;
-  padding:13px 22px;border-radius:10px;
-  transition:.2s;width:100%;text-align:center;
-  text-decoration:none;
+.plan-unico-feats li::before{content:'✓';color:var(--gold);flex-shrink:0;font-weight:700;margin-top:1px;}
+.plan-unico-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#000;font-size:16px;font-weight:700;
+  padding:16px 48px;border-radius:12px;
+  transition:.2s;margin-bottom:20px;
 }
-.btn-whatsapp:hover{box-shadow:0 4px 20px rgba(37,211,102,.35);transform:translateY(-1px);}
-.btn-whatsapp svg{width:18px;height:18px;fill:#fff;flex-shrink:0;}
-
-.plans-footer{text-align:center;font-size:13px;color:var(--text3);margin-top:24px;}
+.plan-unico-btn:hover{box-shadow:0 6px 28px rgba(201,168,76,.4);transform:translateY(-2px);}
+.plan-unico-footer{font-size:12px;color:var(--text3);}
+.plan-unico-guarantee{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:24px;padding:14px 20px;
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:12px;font-size:13px;color:var(--text2);
+  max-width:400px;margin-left:auto;margin-right:auto;
+}
 
 /* ── TESTIMONIALS ── */
-.testi-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:14px;
-}
-.testi{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:24px;
-  transition:.2s;
-}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.testi{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:.2s;}
 .testi:hover{border-color:var(--border2);}
 .testi-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:14px;}
 .testi-text{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px;font-style:italic;}
 .testi-author{display:flex;align-items:center;gap:10px;}
-.testi-av{
-  width:36px;height:36px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold3),var(--gold));
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;font-weight:700;color:#000;flex-shrink:0;
-}
+.testi-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold3),var(--gold));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000;flex-shrink:0;}
 .testi-name{font-size:13px;font-weight:600;}
 .testi-role{font-size:11px;color:var(--text3);margin-top:2px;}
 
 /* ── FAQ ── */
 .faq{display:flex;flex-direction:column;gap:8px;max-width:720px;}
-.faq-item{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:12px;
-  overflow:hidden;
-}
-.faq-q{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 20px;cursor:pointer;
-  font-size:14px;font-weight:500;
-  transition:background .2s;
-  gap:16px;
-}
+.faq-item{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;font-size:14px;font-weight:500;transition:background .2s;gap:16px;}
 .faq-q:hover{background:rgba(255,255,255,.03);}
-.faq-icon{
-  font-size:18px;color:var(--gold);
-  flex-shrink:0;line-height:1;
-}
-.faq-a{
-  font-size:13px;color:var(--text2);line-height:1.65;
-  padding:0 20px 18px;
-  border-top:1px solid var(--border);
-  padding-top:14px;
-}
+.faq-icon{font-size:18px;color:var(--gold);flex-shrink:0;line-height:1;}
+.faq-a{font-size:13px;color:var(--text2);line-height:1.65;padding:0 20px 18px;border-top:1px solid var(--border);padding-top:14px;}
 
 /* ── CTA FINAL ── */
-.cta-final{
-  text-align:center;padding:100px 24px;
-  border-top:1px solid var(--border);
-  position:relative;overflow:hidden;
-}
-.cta-final::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(201,168,76,.08),transparent);
-  pointer-events:none;
-}
-.cta-final h2{
-  font-size:clamp(28px,5vw,56px);
-  font-weight:700;letter-spacing:-.03em;
-  line-height:1.1;margin-bottom:16px;
-}
+.cta-final{text-align:center;padding:100px 24px;border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(201,168,76,.08),transparent);pointer-events:none;}
+.cta-final h2{font-size:clamp(28px,5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;}
 .cta-final p{font-size:15px;color:var(--text2);max-width:440px;margin:0 auto 36px;line-height:1.7;}
 
 /* ── FOOTER ── */
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 40px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:20px;
-  max-width:100%;
-}
+footer{border-top:1px solid var(--border);padding:40px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:100%;}
 .footer-logo{font-size:14px;font-weight:600;color:var(--text);}
 .footer-logo span{color:var(--gold);}
 .footer-links{display:flex;gap:24px;}
@@ -530,14 +233,7 @@ footer{
 .footer-copy{font-size:12px;color:var(--text3);}
 
 /* ── WHATSAPP FLOAT ── */
-.wa-float{
-  position:fixed;bottom:24px;right:24px;z-index:99;
-  width:52px;height:52px;border-radius:50%;
-  background:#25d366;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,.4);
-  transition:.2s;
-}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:.2s;}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.5);}
 .wa-float svg{width:26px;height:26px;fill:#fff;}
 
@@ -550,26 +246,25 @@ footer{
   .stats .stat{border-right:none;border-bottom:1px solid var(--border);}
   .stats .stat:last-child{border-bottom:none;}
   footer{padding:32px 20px;flex-direction:column;align-items:flex-start;gap:16px;}
+  .plan-unico-card{padding:32px 20px;}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══ NAV ══════════════════════════════════════════════════════════ -->
 <nav>
   <div class="nav-logo">Intelligent <span>Agent</span></div>
   <div class="nav-links">
     <a href="#como">Como funciona</a>
     <a href="#demo">Exemplos</a>
     <a href="#funcionalidades">Funcionalidades</a>
-    <a href="#pricing">Planos</a>
+    <a href="#pricing">Plano</a>
     <a href="#depoimentos">Depoimentos</a>
     <a href="https://wa.me/14158795990" target="_blank">Suporte</a>
   </div>
   <a href="#pricing" class="nav-cta">Começar agora</a>
 </nav>
 
-<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-badge">Automação com IA para prestadores de serviço</div>
   <h1>
@@ -578,28 +273,24 @@ footer{
     com nosso
     <span class="sub-line">Inteligente Agente</span>
   </h1>
-  <p class="hero-desc">
-    Agendamentos automáticos pelo WhatsApp, 24 horas por dia. Funciona para qualquer negócio que trabalha com agendamentos — sem precisar responder manualmente, sem perder cliente.
-  </p>
+  <p class="hero-desc">Agendamentos automáticos pelo WhatsApp, 24 horas por dia. Funciona para qualquer negócio que trabalha com agendamentos — sem precisar responder manualmente, sem perder cliente.</p>
   <div class="hero-btns">
-    <a href="#pricing" class="btn-primary">Ver Planos e Preços</a>
+    <a href="#pricing" class="btn-primary">Ver Plano — $29,99/mês</a>
     <a href="#demo" class="btn-secondary">Ver em Ação</a>
   </div>
 </section>
 
-<!-- ═══ STATS ══════════════════════════════════════════════════════════ -->
 <div class="stats">
   <div class="stat"><div class="stat-n">24h</div><div class="stat-l">Atendimento contínuo</div></div>
   <div class="stat"><div class="stat-n">0</div><div class="stat-l">Clientes perdidos</div></div>
   <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Mensagens automáticas</div></div>
-  <div class="stat"><div class="stat-n">4</div><div class="stat-l">Planos disponíveis</div></div>
+  <div class="stat"><div class="stat-n">$29</div><div class="stat-l">Por mês, tudo incluso</div></div>
 </div>
 
-<!-- ═══ SEGMENTOS ══════════════════════════════════════════════════════ -->
 <section class="section">
   <div class="sec-eyebrow">Para qualquer segmento</div>
   <div class="sec-title">Funciona para o seu tipo de negócio.</div>
-  <p class="sec-desc">O Intelligent Agent se adapta a qualquer negócio que trabalha com agendamentos. Veja alguns exemplos:</p>
+  <p class="sec-desc">O Intelligent Agent se adapta a qualquer negócio que trabalha com agendamentos.</p>
   <div class="segments">
     <div class="seg"><div class="seg-icon">💈</div><div class="seg-name">Barbearias</div><div class="seg-desc">Cortes, barba, hidratação por barbeiro</div></div>
     <div class="seg"><div class="seg-icon">💅</div><div class="seg-name">Salões de Beleza</div><div class="seg-desc">Manicure, escova, coloração e mais</div></div>
@@ -610,7 +301,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══ COMO FUNCIONA ══════════════════════════════════════════════════ -->
 <div class="section-dark" id="como">
   <div class="section">
     <div class="sec-eyebrow">Como funciona</div>
@@ -624,220 +314,67 @@ footer{
   </div>
 </div>
 
-<!-- ═══ DEMO CHATS ══════════════════════════════════════════════════════ -->
 <section class="section" id="demo">
   <div class="sec-eyebrow">Exemplos reais</div>
   <div class="sec-title">3 clientes, 3 situações.</div>
   <p class="sec-desc">Veja como o Intelligent Agent resolve cada situação automaticamente, em segundos.</p>
 
-  <!-- ── DEMO COMPONENT ── -->
   <style>
-  .ia-demo-outer{
-    max-width:960px;margin:0 auto 64px;
-    background:linear-gradient(160deg,#0c1018 0%,#111820 100%);
-    border:1px solid rgba(0,180,220,.18);
-    border-radius:32px;
-    padding:40px 40px 32px;
-    position:relative;overflow:hidden;
-  }
-  .ia-demo-outer::before{
-    content:'DEMONSTRAÇÃO FUNCIONAL IA';
-    position:absolute;top:18px;left:50%;transform:translateX(-50%);
-    font-size:10px;font-weight:600;letter-spacing:.2em;
-    color:rgba(0,200,220,.5);white-space:nowrap;
-  }
-  .ia-demo-inner{
-    margin-top:16px;
-    display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;
-  }
+  .ia-demo-outer{max-width:960px;margin:0 auto 64px;background:linear-gradient(160deg,#0c1018 0%,#111820 100%);border:1px solid rgba(0,180,220,.18);border-radius:32px;padding:40px 40px 32px;position:relative;overflow:hidden;}
+  .ia-demo-outer::before{content:'DEMONSTRAÇÃO FUNCIONAL IA';position:absolute;top:18px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;letter-spacing:.2em;color:rgba(0,200,220,.5);white-space:nowrap;}
+  .ia-demo-inner{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
   @media(max-width:680px){.ia-demo-inner{grid-template-columns:1fr;}.ia-demo-outer{padding:32px 16px 24px;}}
-
-  /* PHONE — WhatsApp style */
-  .ia-phone-outer{
-    max-width:280px;margin:0 auto;
-    position:relative;
-  }
-  /* Phone shell */
-  .ia-phone-shell{
-    background:linear-gradient(160deg,#1a1a2e,#16213e);
-    border-radius:44px;
-    padding:14px 10px;
-    box-shadow:
-      0 0 0 2px rgba(255,255,255,.08),
-      0 24px 64px rgba(0,0,0,.6),
-      0 0 40px rgba(0,180,220,.08);
-    position:relative;
-  }
-  /* Notch */
-  .ia-phone-notch{
-    width:80px;height:20px;
-    background:linear-gradient(160deg,#1a1a2e,#16213e);
-    border-radius:0 0 14px 14px;
-    margin:0 auto 6px;
-    display:flex;align-items:center;justify-content:center;
-    gap:6px;
-  }
-  .ia-notch-cam{
-    width:8px;height:8px;border-radius:50%;
-    background:#0a0a14;border:1px solid rgba(255,255,255,.1);
-  }
-  .ia-notch-speaker{
-    width:36px;height:4px;border-radius:4px;
-    background:#0a0a14;
-  }
-  /* WA Screen */
-  .ia-phone{
-    background:#0b141a;
-    border-radius:28px;
-    overflow:hidden;
-    position:relative;
-  }
-  /* WA Top bar */
-  .ia-phone-bar{
-    background:#1f2c34;
-    padding:10px 12px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .ia-phone-back{
-    color:#aaa;font-size:18px;line-height:1;margin-right:2px;
-  }
-  .ia-phone-av{
-    width:34px;height:34px;border-radius:50%;
-    background:linear-gradient(135deg,#128c7e,#25d366);
-    display:flex;align-items:center;justify-content:center;
-    font-size:11px;font-weight:700;color:#fff;flex-shrink:0;
-  }
+  .ia-phone-outer{max-width:280px;margin:0 auto;position:relative;}
+  .ia-phone-shell{background:linear-gradient(160deg,#1a1a2e,#16213e);border-radius:44px;padding:14px 10px;box-shadow:0 0 0 2px rgba(255,255,255,.08),0 24px 64px rgba(0,0,0,.6),0 0 40px rgba(0,180,220,.08);position:relative;}
+  .ia-phone-notch{width:80px;height:20px;background:linear-gradient(160deg,#1a1a2e,#16213e);border-radius:0 0 14px 14px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .ia-notch-cam{width:8px;height:8px;border-radius:50%;background:#0a0a14;border:1px solid rgba(255,255,255,.1);}
+  .ia-notch-speaker{width:36px;height:4px;border-radius:4px;background:#0a0a14;}
+  .ia-phone{background:#0b141a;border-radius:28px;overflow:hidden;position:relative;}
+  .ia-phone-bar{background:#1f2c34;padding:10px 12px;display:flex;align-items:center;gap:8px;}
+  .ia-phone-back{color:#aaa;font-size:18px;line-height:1;margin-right:2px;}
+  .ia-phone-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#128c7e,#25d366);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
   .ia-phone-info{flex:1;}
   .ia-phone-info .ia-phone-name{font-size:13px;font-weight:600;color:#e9edef;}
   .ia-phone-info .ia-phone-st{font-size:10px;color:#8696a0;margin-top:1px;}
   .ia-phone-icons{display:flex;gap:14px;color:#aebac1;font-size:16px;}
-  /* WA wallpaper */
-  .ia-phone-feed{
-    background:#0b141a;
-    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    padding:10px 8px;min-height:340px;max-height:340px;
-    overflow:hidden;display:flex;flex-direction:column;gap:6px;
-  }
-  /* WA bottom bar */
-  .ia-phone-input{
-    background:#1f2c34;
-    padding:8px 10px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .ia-phone-input-box{
-    flex:1;background:#2a3942;border-radius:20px;
-    padding:8px 14px;font-size:11px;color:#8696a0;
-  }
-  .ia-phone-mic{
-    width:36px;height:36px;border-radius:50%;
-    background:#00a884;
-    display:flex;align-items:center;justify-content:center;
-    font-size:14px;flex-shrink:0;
-  }
-  /* Home indicator */
-  .ia-phone-home{
-    width:80px;height:4px;border-radius:4px;
-    background:rgba(255,255,255,.15);
-    margin:8px auto 0;
-  }
-
-  /* BUBBLES */
+  .ia-phone-feed{background:#0b141a;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");padding:10px 8px;min-height:340px;max-height:340px;overflow:hidden;display:flex;flex-direction:column;gap:6px;}
+  .ia-phone-input{background:#1f2c34;padding:8px 10px;display:flex;align-items:center;gap:8px;}
+  .ia-phone-input-box{flex:1;background:#2a3942;border-radius:20px;padding:8px 14px;font-size:11px;color:#8696a0;}
+  .ia-phone-mic{width:36px;height:36px;border-radius:50%;background:#00a884;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+  .ia-phone-home{width:80px;height:4px;border-radius:4px;background:rgba(255,255,255,.15);margin:8px auto 0;}
   .ia-bubble-wrap{display:flex;flex-direction:column;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;}
   .ia-bubble-wrap.show{opacity:1;transform:translateY(0);}
   .ia-bubble-wrap.right{align-items:flex-end;}
   .ia-bubble-wrap.left{align-items:flex-start;}
-  .ia-bubble{
-    font-size:12.5px;line-height:1.5;padding:9px 13px;
-    border-radius:14px;max-width:86%;
-  }
-  .ia-bubble.client{
-    background:#005c4b;color:#e9edef;font-weight:400;
-    border-radius:8px 8px 3px 8px;
-    position:relative;
-  }
-  .ia-bubble.client::after{
-    content:'✓✓';position:absolute;bottom:4px;right:8px;
-    font-size:9px;color:#53bdeb;
-  }
-  .ia-bubble.agent{
-    background:#202c33;color:#e9edef;
-    border-radius:8px 8px 8px 3px;
-  }
+  .ia-bubble{font-size:12.5px;line-height:1.5;padding:9px 13px;border-radius:14px;max-width:86%;}
+  .ia-bubble.client{background:#005c4b;color:#e9edef;font-weight:400;border-radius:8px 8px 3px 8px;position:relative;}
+  .ia-bubble.client::after{content:'✓✓';position:absolute;bottom:4px;right:8px;font-size:9px;color:#53bdeb;}
+  .ia-bubble.agent{background:#202c33;color:#e9edef;border-radius:8px 8px 8px 3px;}
   .ia-bubble-meta{font-size:9px;color:rgba(255,255,255,.3);margin-top:3px;letter-spacing:.02em;}
-
-  /* TYPING INDICATOR */
-  .ia-typing{
-    display:none;align-items:center;gap:4px;
-    padding:10px 14px;background:#202c33;
-    border-radius:8px 8px 8px 3px;width:fit-content;
-  }
+  .ia-typing{display:none;align-items:center;gap:4px;padding:10px 14px;background:#202c33;border-radius:8px 8px 8px 3px;width:fit-content;}
   .ia-typing.show{display:flex;}
-  .ia-typing span{
-    width:6px;height:6px;border-radius:50%;background:#25d366;
-    animation:iaTypeDot 1s infinite;
-  }
+  .ia-typing span{width:6px;height:6px;border-radius:50%;background:#25d366;animation:iaTypeDot 1s infinite;}
   .ia-typing span:nth-child(2){animation-delay:.15s;}
   .ia-typing span:nth-child(3){animation-delay:.3s;}
   @keyframes iaTypeDot{0%,60%,100%{opacity:.2;transform:scale(.8)}30%{opacity:1;transform:scale(1)}}
-
-  /* RIGHT PANEL */
   .ia-panel{padding:8px 0;}
-  .ia-panel-title{
-    font-size:clamp(20px,2.5vw,28px);font-weight:700;
-    color:#f0ede8;line-height:1.25;margin-bottom:12px;
-    font-style:italic;
-    transition:opacity .4s;
-  }
-  .ia-panel-desc{
-    font-size:13.5px;color:rgba(240,237,232,.5);line-height:1.7;
-    margin-bottom:22px;transition:opacity .4s;
-  }
+  .ia-panel-title{font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#f0ede8;line-height:1.25;margin-bottom:12px;font-style:italic;transition:opacity .4s;}
+  .ia-panel-desc{font-size:13.5px;color:rgba(240,237,232,.5);line-height:1.7;margin-bottom:22px;transition:opacity .4s;}
   .ia-panel-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
-  .ia-ptag{
-    display:inline-flex;align-items:center;gap:5px;
-    font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
-    color:#00b4d8;border:1px solid rgba(0,180,220,.3);
-    background:rgba(0,180,220,.07);padding:6px 12px;border-radius:7px;
-    transition:opacity .4s;
-  }
-  .ia-panel-quote{
-    font-size:12.5px;font-style:italic;
-    color:rgba(0,200,220,.75);
-    border-left:2px solid rgba(0,180,220,.35);
-    padding:8px 14px;background:rgba(0,180,220,.04);
-    border-radius:0 7px 7px 0;margin-bottom:24px;
-  }
-  .ia-panel-cta{
-    display:inline-flex;align-items:center;gap:8px;
-    background:linear-gradient(135deg,#00b4d8,#005f8a);
-    color:#fff;font-size:12px;font-weight:700;
-    letter-spacing:.06em;text-transform:uppercase;
-    padding:13px 22px;border-radius:9px;
-    text-decoration:none;transition:.2s;
-  }
+  .ia-ptag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#00b4d8;border:1px solid rgba(0,180,220,.3);background:rgba(0,180,220,.07);padding:6px 12px;border-radius:7px;transition:opacity .4s;}
+  .ia-panel-quote{font-size:12.5px;font-style:italic;color:rgba(0,200,220,.75);border-left:2px solid rgba(0,180,220,.35);padding:8px 14px;background:rgba(0,180,220,.04);border-radius:0 7px 7px 0;margin-bottom:24px;}
+  .ia-panel-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#00b4d8,#005f8a);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:13px 22px;border-radius:9px;text-decoration:none;transition:.2s;}
   .ia-panel-cta:hover{box-shadow:0 4px 20px rgba(0,180,220,.4);transform:translateY(-1px);}
-  .ia-panel-dots{
-    font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-    color:rgba(0,200,220,.3);margin-top:20px;
-    display:flex;align-items:center;gap:12px;
-  }
+  .ia-panel-dots{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,200,220,.3);margin-top:20px;display:flex;align-items:center;gap:12px;}
   .ia-panel-dots::before,.ia-panel-dots::after{content:'●';font-size:5px;}
   </style>
 
   <div class="ia-demo-outer">
     <div class="ia-demo-inner">
-
-      <!-- PHONE — WhatsApp style -->
       <div class="ia-phone-outer">
         <div class="ia-phone-shell">
-          <!-- Notch -->
-          <div class="ia-phone-notch">
-            <div class="ia-notch-speaker"></div>
-            <div class="ia-notch-cam"></div>
-          </div>
-          <!-- WA Screen -->
+          <div class="ia-phone-notch"><div class="ia-notch-speaker"></div><div class="ia-notch-cam"></div></div>
           <div class="ia-phone">
-            <!-- Top bar -->
             <div class="ia-phone-bar">
               <div class="ia-phone-back">‹</div>
               <div class="ia-phone-av">IA</div>
@@ -845,29 +382,19 @@ footer{
                 <div class="ia-phone-name">Inteligente Agente</div>
                 <div class="ia-phone-st" id="iaStatus">online</div>
               </div>
-              <div class="ia-phone-icons">
-                <span>📞</span>
-                <span>⋮</span>
-              </div>
+              <div class="ia-phone-icons"><span>📞</span><span>⋮</span></div>
             </div>
-            <!-- Messages -->
             <div class="ia-phone-feed" id="iaFeed">
-              <div class="ia-typing" id="iaTyping">
-                <span></span><span></span><span></span>
-              </div>
+              <div class="ia-typing" id="iaTyping"><span></span><span></span><span></span></div>
             </div>
-            <!-- Input bar -->
             <div class="ia-phone-input">
               <div class="ia-phone-input-box">Mensagem</div>
               <div class="ia-phone-mic">🎤</div>
             </div>
           </div>
-          <!-- Home indicator -->
           <div class="ia-phone-home"></div>
         </div>
       </div>
-
-      <!-- PANEL -->
       <div class="ia-panel">
         <div class="ia-panel-title" id="iaPanelTitle">Aguardando<br/>mensagem…</div>
         <div class="ia-panel-desc" id="iaPanelDesc">O sistema está pronto para atender qualquer cliente que enviar uma mensagem pelo WhatsApp, 24 horas por dia.</div>
@@ -879,180 +406,65 @@ footer{
         <a href="#pricing" class="ia-panel-cta">Quero este agente no meu negócio →</a>
         <div class="ia-panel-dots">Inteligência &nbsp;·&nbsp; Velocidade &nbsp;·&nbsp; Sucesso</div>
       </div>
-
     </div>
   </div>
-
   <script>
   (function(){
-    var feed    = document.getElementById('iaFeed');
-    var typing  = document.getElementById('iaTyping');
-    var title   = document.getElementById('iaPanelTitle');
-    var desc    = document.getElementById('iaPanelDesc');
-    var tag1    = document.getElementById('iaTag1');
-    var tag2    = document.getElementById('iaTag2');
-
-    var script = [
-      // [type, text, time_label, panel_title, panel_desc, tag1, tag2, delay_after]
-      ['client','Olá! Gostaria de agendar uma consulta para amanhã.','14:02 · Cliente',
-        'Mensagem<br/>Recebida','Cliente enviou uma mensagem. A IA está analisando a intenção em tempo real.','⚡ NLP Ativo','🔍 Analisando',1200],
-      ['agent', 'Olá! Consultando a agenda... Temos disponibilidade às 10:00, 14:30 e 17:00. Qual prefere?','14:02 · Agente IA',
-        'Consultando<br/>a Agenda','A IA buscou os horários disponíveis no banco de dados e respondeu automaticamente.','📅 Consultando DB','✅ Resposta Enviada',2000],
-      ['client','Pode ser às 14:30. Vocês aceitam cartão?','14:03 · Cliente',
-        'Escolha<br/>Confirmada','Cliente selecionou o horário. A IA processa a confirmação e responde a dúvida.','⚡ Processando','💳 Verificando',1400],
-      ['agent', 'Sim! Aceitamos cartão. Consulta confirmada para amanhã às 14:30. ✅','14:03 · Agente IA',
-        'Consulta<br/>Confirmada!','Horário salvo automaticamente. Lembrete programado para 24h e 1h antes.','✅ Agendado','⏰ Lembrete OK',2400],
-      ['client','Perfeito! Obrigado 😊','14:03 · Cliente',
-        'Conversa<br/>Concluída','Tudo feito sem nenhuma intervenção humana. O negócio ganhou um cliente confirmado.','🎉 Sucesso','🔄 Pronto',1200],
-      ['agent', 'Até amanhã! Vou te lembrar 1 hora antes da sua consulta. 👊','14:03 · Agente IA',
-        'Sistema<br/>Reiniciando','O agente está pronto para o próximo cliente. Funciona 24h, 7 dias por semana.','● Sistema Ativo','● Aguardando',3000],
+    var feed=document.getElementById('iaFeed'),typing=document.getElementById('iaTyping'),title=document.getElementById('iaPanelTitle'),desc=document.getElementById('iaPanelDesc'),tag1=document.getElementById('iaTag1'),tag2=document.getElementById('iaTag2');
+    var script=[
+      ['client','Olá! Gostaria de agendar uma consulta para amanhã.','14:02 · Cliente','Mensagem<br/>Recebida','Cliente enviou uma mensagem. A IA está analisando a intenção em tempo real.','⚡ NLP Ativo','🔍 Analisando',1200],
+      ['agent','Olá! Consultando a agenda... Temos disponibilidade às 10:00, 14:30 e 17:00. Qual prefere?','14:02 · Agente IA','Consultando<br/>a Agenda','A IA buscou os horários disponíveis no banco de dados e respondeu automaticamente.','📅 Consultando DB','✅ Resposta Enviada',2000],
+      ['client','Pode ser às 14:30. Vocês aceitam cartão?','14:03 · Cliente','Escolha<br/>Confirmada','Cliente selecionou o horário. A IA processa a confirmação e responde a dúvida.','⚡ Processando','💳 Verificando',1400],
+      ['agent','Sim! Aceitamos cartão. Consulta confirmada para amanhã às 14:30. ✅','14:03 · Agente IA','Consulta<br/>Confirmada!','Horário salvo automaticamente. Lembrete programado para 24h e 1h antes.','✅ Agendado','⏰ Lembrete OK',2400],
+      ['client','Perfeito! Obrigado 😊','14:03 · Cliente','Conversa<br/>Concluída','Tudo feito sem nenhuma intervenção humana. O negócio ganhou um cliente confirmado.','🎉 Sucesso','🔄 Pronto',1200],
+      ['agent','Até amanhã! Vou te lembrar 1 hora antes da sua consulta. 👊','14:03 · Agente IA','Sistema<br/>Reiniciando','O agente está pronto para o próximo cliente. Funciona 24h, 7 dias por semana.','● Sistema Ativo','● Aguardando',3000],
     ];
-
-    var current = 0;
-
-    function updatePanel(s){
-      title.style.opacity='0';
-      setTimeout(function(){
-        title.innerHTML = s[3];
-        desc.textContent = s[4];
-        tag1.textContent = s[5];
-        tag2.textContent = s[6];
-        title.style.opacity='1';
-      },200);
-    }
-
+    var current=0;
+    function updatePanel(s){title.style.opacity='0';setTimeout(function(){title.innerHTML=s[3];desc.textContent=s[4];tag1.textContent=s[5];tag2.textContent=s[6];title.style.opacity='1';},200);}
     function addBubble(s){
-      var isClient = s[0]==='client';
-
-      // Show typing for agent
-      if(!isClient){
-        feed.insertBefore(typing, null);
-        typing.classList.add('show');
-        feed.appendChild(typing);
-        feed.scrollTop = feed.scrollHeight;
-      }
-
+      var isClient=s[0]==='client';
+      if(!isClient){feed.insertBefore(typing,null);typing.classList.add('show');feed.appendChild(typing);feed.scrollTop=feed.scrollHeight;}
       setTimeout(function(){
         typing.classList.remove('show');
-
-        var wrap = document.createElement('div');
-        wrap.className='ia-bubble-wrap '+(isClient?'right':'left');
-
-        var bub = document.createElement('div');
-        bub.className='ia-bubble '+(isClient?'client':'agent');
-        bub.textContent = s[1];
-
-        var meta = document.createElement('div');
-        meta.className='ia-bubble-meta';
-        meta.textContent = s[2];
-
-        wrap.appendChild(bub);
-        wrap.appendChild(meta);
-        feed.insertBefore(wrap, typing);
-        feed.appendChild(typing);
-
-        requestAnimationFrame(function(){
-          requestAnimationFrame(function(){
-            wrap.classList.add('show');
-          });
-        });
-
-        feed.scrollTop = feed.scrollHeight;
-        updatePanel(s);
-
+        var wrap=document.createElement('div');wrap.className='ia-bubble-wrap '+(isClient?'right':'left');
+        var bub=document.createElement('div');bub.className='ia-bubble '+(isClient?'client':'agent');bub.textContent=s[1];
+        var meta=document.createElement('div');meta.className='ia-bubble-meta';meta.textContent=s[2];
+        wrap.appendChild(bub);wrap.appendChild(meta);feed.insertBefore(wrap,typing);feed.appendChild(typing);
+        requestAnimationFrame(function(){requestAnimationFrame(function(){wrap.classList.add('show');});});
+        feed.scrollTop=feed.scrollHeight;updatePanel(s);
         current++;
-        if(current >= script.length){
-          // Restart after pause
-          setTimeout(function(){
-            current = 0;
-            // Clear bubbles (keep typing indicator)
-            var bubbles = feed.querySelectorAll('.ia-bubble-wrap');
-            bubbles.forEach(function(b){ b.remove(); });
-            title.innerHTML='Aguardando<br/>mensagem…';
-            desc.textContent='O sistema está pronto para atender qualquer cliente que enviar uma mensagem pelo WhatsApp, 24 horas por dia.';
-            tag1.textContent='● Sistema Ativo';
-            tag2.textContent='● Aguardando';
-            setTimeout(run, 800);
-          }, 2000);
-          return;
-        }
-        setTimeout(run, s[7]);
-      }, isClient ? 0 : 900);
+        if(current>=script.length){setTimeout(function(){current=0;feed.querySelectorAll('.ia-bubble-wrap').forEach(function(b){b.remove();});title.innerHTML='Aguardando<br/>mensagem…';desc.textContent='O sistema está pronto para atender qualquer cliente que enviar uma mensagem pelo WhatsApp, 24 horas por dia.';tag1.textContent='● Sistema Ativo';tag2.textContent='● Aguardando';setTimeout(run,800);},2000);return;}
+        setTimeout(run,s[7]);
+      },isClient?0:900);
     }
-
-    function run(){
-      if(current >= script.length) return;
-      var s = script[current];
-      if(s[0]==='agent'){
-        typing.classList.add('show');
-        feed.appendChild(typing);
-        feed.scrollTop = feed.scrollHeight;
-        setTimeout(function(){ addBubble(s); }, 900);
-      } else {
-        addBubble(s);
-      }
-    }
-
-    // Start after short delay
-    setTimeout(run, 1200);
+    function run(){if(current>=script.length)return;var s=script[current];if(s[0]==='agent'){typing.classList.add('show');feed.appendChild(typing);feed.scrollTop=feed.scrollHeight;setTimeout(function(){addBubble(s);},900);}else{addBubble(s);}}
+    setTimeout(run,1200);
   })();
   </script>
-  <!-- ── /DEMO COMPONENT ── -->
 
   <div class="demo-grid">
-
-    <!-- NOVO AGENDAMENTO -->
     <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-av">L</div>
-        <div>
-          <div class="demo-hname">Lucas</div>
-          <div class="demo-hstatus"><span class="demo-dot"></span> online</div>
-        </div>
-        <div class="demo-htag">Novo agendamento</div>
-      </div>
+      <div class="demo-header"><div class="demo-av">L</div><div><div class="demo-hname">Lucas</div><div class="demo-hstatus"><span class="demo-dot"></span> online</div></div><div class="demo-htag">Novo agendamento</div></div>
       <div class="demo-msgs">
         <div class="dm dm-user">oi quero marcar um horário</div>
-        <div class="dm dm-agent">Olá Lucas! 😊<br/><strong>1</strong> Agendar<br/><strong>2</strong> Meus agendamentos<br/><strong>3</strong> Reagendar<br/><strong>4</strong> Cancelar</div>
-        <div class="dm dm-user">1</div>
-        <div class="dm dm-agent">Qual serviço e profissional?<br/>Com qual data e horário?</div>
+        <div class="dm dm-agent">Olá Lucas! 😊<br/><strong>Qual serviço e profissional?</strong><br/>Com qual data e horário?</div>
         <div class="dm dm-user">Corte com Andre, sexta às 10h</div>
         <div class="dm dm-agent">✅ <strong>Agendado!</strong><br/>Sexta às 10h com Andre.<br/>Te esperamos! 👊</div>
       </div>
       <div class="demo-footer">→ Agendamento automático</div>
     </div>
-
-    <!-- REAGENDAMENTO -->
     <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-av">M</div>
-        <div>
-          <div class="demo-hname">Marcos</div>
-          <div class="demo-hstatus"><span class="demo-dot"></span> online</div>
-        </div>
-        <div class="demo-htag">Reagendamento</div>
-      </div>
+      <div class="demo-header"><div class="demo-av">M</div><div><div class="demo-hname">Marcos</div><div class="demo-hstatus"><span class="demo-dot"></span> online</div></div><div class="demo-htag">Reagendamento</div></div>
       <div class="demo-msgs">
         <div class="dm dm-user">preciso mudar meu horário</div>
-        <div class="dm dm-agent">🔄 <strong>Reagendar:</strong><br/><br/><strong>1</strong> Serviço — 10/05 às 15:00<br/><br/>Qual a nova data e horário?</div>
-        <div class="dm dm-user">1</div>
-        <div class="dm dm-agent">Qual a nova data e horário?</div>
+        <div class="dm dm-agent">🔄 <strong>Reagendar:</strong><br/><br/>• Serviço — 10/05 às 15:00<br/><br/>Qual a nova data e horário?</div>
         <div class="dm dm-user">sábado às 9h</div>
         <div class="dm dm-agent">🔄 <strong>Reagendado!</strong><br/>Sábado às 09:00<br/>Horário anterior cancelado ✂️</div>
       </div>
       <div class="demo-footer">→ Reagendamento inteligente</div>
     </div>
-
-    <!-- LEMBRETE + FOLLOW-UP -->
     <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-av">R</div>
-        <div>
-          <div class="demo-hname">Rafael</div>
-          <div class="demo-hstatus"><span class="demo-dot demo-dot-gold"></span> lembrete enviado</div>
-        </div>
-        <div class="demo-htag">Follow-up automático</div>
-      </div>
+      <div class="demo-header"><div class="demo-av">R</div><div><div class="demo-hname">Rafael</div><div class="demo-hstatus"><span class="demo-dot demo-dot-gold"></span> lembrete enviado</div></div><div class="demo-htag">Follow-up automático</div></div>
       <div class="demo-msgs">
         <div class="dm-time">24h antes</div>
         <div class="dm dm-agent">📅 Rafael! Seu horário é amanhã às 14h. Te esperamos! ✂️</div>
@@ -1065,41 +477,35 @@ footer{
       </div>
       <div class="demo-footer">→ Follow-up automático</div>
     </div>
-
   </div>
 </section>
 
-<!-- ═══ FUNCIONALIDADES ════════════════════════════════════════════════ -->
 <div class="section-dark" id="funcionalidades">
   <div class="section">
     <div class="sec-eyebrow">Funcionalidades</div>
-    <div class="sec-title">Tudo que seu negócio precisa.</div>
+    <div class="sec-title">Tudo incluso em um único plano.</div>
     <div class="features-grid">
-
-      <div class="feat"><div class="feat-icon">💬</div><div class="feat-title">Áudio e texto</div><div class="feat-desc">Entende mensagens de voz e texto. O cliente usa como preferir.</div><span class="feat-badge">Todos os planos</span></div>
-      <div class="feat"><div class="feat-icon">📋</div><div class="feat-title">Agendamento completo</div><div class="feat-desc">Serviço, profissional, data e hora. Confirmação automática.</div><span class="feat-badge">Todos os planos</span></div>
-      <div class="feat"><div class="feat-icon">❌</div><div class="feat-title">Cancelamento</div><div class="feat-desc">Seleção individual de horários. O cliente escolhe qual cancelar.</div><span class="feat-badge">Todos os planos</span></div>
-      <div class="feat"><div class="feat-icon">🔄</div><div class="feat-title">Reagendamento</div><div class="feat-desc">Cliente informa o novo horário direto no chat. Rápido e sem atrito.</div><span class="feat-badge">Intermediário e Premium</span></div>
-      <div class="feat"><div class="feat-icon">⏰</div><div class="feat-title">Lembretes automáticos</div><div class="feat-desc">24h e 1h antes do horário. Pós-atendimento, reativação e aniversário.</div><span class="feat-badge">Intermediário e Premium</span></div>
-      <div class="feat"><div class="feat-icon">🎯</div><div class="feat-title">Suporte dedicado</div><div class="feat-desc">Atendimento personalizado para garantir que o sistema funcione para o seu negócio.</div><span class="feat-badge">Intermediário e Premium</span></div>
-      <div class="feat"><div class="feat-icon">📅</div><div class="feat-title">Google Calendar</div><div class="feat-desc">Cada agendamento cria um evento no calendário do profissional automaticamente.</div><span class="feat-badge">Somente Premium</span></div>
-      <div class="feat"><div class="feat-icon">📊</div><div class="feat-title">Google Sheets</div><div class="feat-desc">Dados sincronizados automaticamente a cada 3 minutos.</div><span class="feat-badge">Somente Premium</span></div>
-      <div class="feat"><div class="feat-icon">📈</div><div class="feat-title">CRM completo</div><div class="feat-desc">Acompanhe clientes, agendamentos e métricas. Visibilidade total do seu negócio em um só lugar.</div><span class="feat-badge">Somente Premium</span></div>
-      <div class="feat"><div class="feat-icon">🔒</div><div class="feat-title">Controle de acesso</div><div class="feat-desc">Gerenciamento de assinaturas via Stripe. Ativação e bloqueio automático conforme o plano.</div><span class="feat-badge">Somente Premium</span></div>
-      <div class="feat"><div class="feat-icon">🌐</div><div class="feat-title">Multi-idioma</div><div class="feat-desc">Atende em português e inglês de forma natural — ideal para negócios em regiões bilíngues.</div><span class="feat-badge">Todos os planos</span></div>
-      <div class="feat"><div class="feat-icon">🛠️</div><div class="feat-title">Instalação customizada</div><div class="feat-desc">Configuração feita pela nossa equipe sob medida. Você começa em menos de 24h sem mexer em nada técnico.</div><span class="feat-badge">Todos os planos</span></div>
-
-      <div class="feat-cta"><a href="#pricing">Ver plano Premium →</a></div>
+      <div class="feat"><div class="feat-icon">💬</div><div class="feat-title">Áudio e texto</div><div class="feat-desc">Entende mensagens de voz e texto. O cliente usa como preferir.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">📋</div><div class="feat-title">Agendamento completo</div><div class="feat-desc">Serviço, profissional, data e hora. Confirmação automática.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">❌</div><div class="feat-title">Cancelamento</div><div class="feat-desc">Seleção individual de horários. O cliente escolhe qual cancelar.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">🔄</div><div class="feat-title">Reagendamento</div><div class="feat-desc">Cliente informa o novo horário direto no chat. Rápido e sem atrito.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">⏰</div><div class="feat-title">Lembretes automáticos</div><div class="feat-desc">24h e 1h antes do horário. Reduz faltas em até 80%.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">📅</div><div class="feat-title">Google Calendar</div><div class="feat-desc">Cada agendamento cria um evento no calendário do profissional automaticamente.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">📊</div><div class="feat-title">Google Sheets</div><div class="feat-desc">Dados sincronizados automaticamente. Visão completa do seu negócio.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">🌐</div><div class="feat-title">Multi-idioma</div><div class="feat-desc">Atende em português e inglês — ideal para negócios em regiões bilíngues.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">🛠️</div><div class="feat-title">Instalação customizada</div><div class="feat-desc">Configuração feita pela nossa equipe sob medida. Você começa em menos de 24h.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">🎯</div><div class="feat-title">Suporte dedicado</div><div class="feat-desc">Atendimento personalizado para garantir que o sistema funcione para o seu negócio.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">📈</div><div class="feat-title">CRM completo</div><div class="feat-desc">Acompanhe clientes, agendamentos e métricas em um só lugar.</div><span class="feat-badge">Incluso</span></div>
+      <div class="feat"><div class="feat-icon">🔒</div><div class="feat-title">Banco de dados seguro</div><div class="feat-desc">Dados dos seus clientes armazenados com segurança na nuvem.</div><span class="feat-badge">Incluso</span></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ CTA MID ════════════════════════════════════════════════════════ -->
 <div class="cta-mid">
   <h2>Pronto para começar?</h2>
-  <p>Seu negócio merece um sistema que trabalha por você. Instalação feita por nós. Você começa a usar em menos de 24 horas.</p>
+  <p>Seu negócio merece um sistema que trabalha por você. Instalação feita por nós em menos de 24 horas.</p>
   <div class="cta-mid-btns">
-    <a href="#pricing" class="btn-primary">Ver Planos →</a>
+    <a href="#pricing" class="btn-primary">Ver Plano — $29,99/mês →</a>
     <a href="https://wa.me/14158795990" target="_blank" class="btn-secondary">Falar com suporte</a>
   </div>
   <div class="cta-pills">
@@ -1109,182 +515,104 @@ footer{
   </div>
 </div>
 
-<!-- ═══ PLANOS ══════════════════════════════════════════════════════════ -->
+<!-- ═══ PLANO ÚNICO ══════════════════════════════════════════════════════ -->
 <div id="pricing">
-  <div class="plans-wrap">
-    <div class="plans-header">
-      <div class="sec-eyebrow" style="text-align:center;">Planos e Preços</div>
-      <div class="sec-title" style="text-align:center;">Escolha o seu plano.</div>
-      <p class="plans-note-top">Todos os valores em dólar americano (USD)</p>
+  <div class="plan-unico-wrap">
+    <div class="plan-unico-header">
+      <div class="sec-eyebrow" style="text-align:center;">Plano e Preço</div>
+      <div class="sec-title" style="text-align:center;">Um plano. Tudo incluso.</div>
+      <p style="text-align:center;color:var(--text2);font-size:14px;margin-top:8px;">Sem surpresas, sem limitações. Tudo que seu negócio precisa por um único valor.</p>
     </div>
 
-    <!-- 3 PLANOS PRINCIPAIS -->
-    <div class="plans-grid">
+    <div class="plan-unico-card">
+      <div class="plan-unico-badge">✦ Plano Completo</div>
+      <div class="plan-unico-nome">Intelligent Agent</div>
+      <div class="plan-unico-price"><sup>$</sup>29<sub>,99/mês</sub></div>
+      <p class="plan-unico-desc">Acesso completo a todas as funcionalidades.<br/>Instalação customizada inclusa. Sem contratos longos.</p>
 
-      <div class="plan">
-        <div class="plan-name">Básico</div>
-        <div class="plan-price"><sup>$</sup>97<sub>/mês</sub></div>
-        <div class="plan-setup">+ $247 setup único</div>
-        <div class="plan-div"></div>
-        <ul class="plan-feats">
-          <li>Atendimento 24h no WhatsApp</li>
-          <li>Agendamento por texto e áudio</li>
-          <li>Visualizar agendamentos</li>
-          <li>Cancelamento inteligente</li>
-          <li>Cadastro automático de clientes</li>
-          <li>Instalação customizada</li>
-          <li class="no">Reagendamento completo</li>
-          <li class="no">Lembretes automáticos</li>
-          <li class="no">Google Calendar</li>
-          <li class="no">Google Sheets</li>
-          <li class="no">CRM completo</li>
-        </ul>
-        <a href="https://buy.stripe.com/28E3cu1VMdjldaEgv19EI02" target="_blank" class="plan-btn plan-btn-out">Começar agora</a>
-      </div>
+      <ul class="plan-unico-feats">
+        <li>Atendimento 24h no WhatsApp</li>
+        <li>Agendamento por texto e áudio</li>
+        <li>Cancelamento inteligente</li>
+        <li>Reagendamento completo</li>
+        <li>Lembretes automáticos 24h e 1h</li>
+        <li>Google Calendar integrado</li>
+        <li>Google Sheets sincronizado</li>
+        <li>CRM completo do negócio</li>
+        <li>Cadastro automático de clientes</li>
+        <li>Instalação customizada inclusa</li>
+        <li>Suporte dedicado via WhatsApp</li>
+        <li>Multi-idioma (PT + EN)</li>
+      </ul>
 
-      <div class="plan plan-pop">
-        <div class="plan-pop-badge">Mais popular</div>
-        <div class="plan-name">Intermediário</div>
-        <div class="plan-price"><sup>$</sup>107<sub>/mês</sub></div>
-        <div class="plan-setup">+ $247 setup único</div>
-        <div class="plan-div"></div>
-        <ul class="plan-feats">
-          <li>Tudo do Básico</li>
-          <li>Reagendamento completo</li>
-          <li>Lembretes 24h e 1h antes</li>
-          <li>Mensagens pós-atendimento</li>
-          <li>Reativação de clientes inativos</li>
-          <li>Suporte dedicado</li>
-          <li>Google Calendar</li>
-          <li>Google Sheets</li>
-          <li class="no">CRM completo</li>
-          <li class="no">Relatórios e métricas</li>
-        </ul>
-        <a href="https://buy.stripe.com/14A7sK7g6bbd5Icgv19EI03" target="_blank" class="plan-btn plan-btn-fill">Quero este plano</a>
-      </div>
+      <a href="https://buy.stripe.com/28E3cu1VMdjldaEgv19EI02" target="_blank" class="plan-unico-btn">Começar agora — $29,99/mês</a>
+      <div class="plan-unico-footer">Cancele quando quiser · Sem fidelidade · Sem taxa de setup oculta</div>
 
-      <div class="plan">
-        <div class="plan-name">Premium</div>
-        <div class="plan-price"><sup>$</sup>117<sub>/mês</sub></div>
-        <div class="plan-setup">+ $247 setup único</div>
-        <div class="plan-div"></div>
-        <ul class="plan-feats">
-          <li>Tudo do Intermediário</li>
-          <li>Google Calendar por profissional</li>
-          <li>Sync Google Sheets (3 min)</li>
-          <li>CRM completo do negócio</li>
-          <li>Follow-up automático completo</li>
-          <li>Controle de acesso via Stripe</li>
-          <li>Prioridade no suporte</li>
-          <li>Relatórios e métricas</li>
-          <li>Instalação customizada</li>
-        </ul>
-        <a href="https://buy.stripe.com/3cIcN457Ya79c6Agv19EI00" target="_blank" class="plan-btn plan-btn-out">Quero o Premium</a>
-      </div>
-
-    </div>
-
-    <!-- PLANO CUSTOMIZADO -->
-    <div class="plan-custom-wrap">
-      <div class="plan-custom-left">
-        <div class="plan-custom-tag">Sob medida para o seu negócio</div>
-        <div class="plan-custom-name">Customizado</div>
-        <div class="plan-custom-sub">Para negócios com necessidades específicas — mais profissionais, integrações exclusivas ou estrutura multi-unidade.</div>
-        <ul class="plan-custom-feats">
-          <li>Tudo do plano Premium</li>
-          <li>Profissionais ilimitados</li>
-          <li>Fluxos personalizados</li>
-          <li>Integrações sob demanda</li>
-          <li>Multi-unidades e filiais</li>
-          <li>Dashboards customizados</li>
-          <li>SLA de suporte prioritário</li>
-          <li>Treinamento da equipe incluso</li>
-          <li>Desenvolvimento de funcionalidades extras</li>
-          <li>Consultor dedicado ao projeto</li>
-        </ul>
-      </div>
-      <div class="plan-custom-right">
-        <div class="plan-custom-price">
-          Preço sob consulta
-          <small>Setup e mensalidade<br/>definidos conforme escopo</small>
+      <div class="plan-unico-guarantee">
+        <span style="font-size:24px;">🛡️</span>
+        <div>
+          <div style="font-weight:600;color:var(--text);font-size:13px;">Garantia de 7 dias</div>
+          <div style="font-size:12px;color:var(--text3);">Não ficou satisfeito? Devolvemos 100% do valor.</div>
         </div>
-        <a href="https://wa.me/14158795990?text=Olá!%20Tenho%20interesse%20no%20plano%20Customizado%20do%20Intelligent%20Agent.%20Pode%20me%20passar%20mais%20informações?" target="_blank" class="btn-whatsapp">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Falar no WhatsApp
-        </a>
       </div>
     </div>
 
-    <p class="plans-footer">Todos os planos incluem suporte via WhatsApp. Cancele quando quiser.</p>
+    <p style="text-align:center;font-size:13px;color:var(--text3);margin-top:24px;">Todos os valores em dólar americano (USD) · Suporte via WhatsApp incluído</p>
   </div>
 </div>
 
-<!-- ═══ DEPOIMENTOS ════════════════════════════════════════════════════ -->
 <div class="section-dark" id="depoimentos">
   <div class="section">
     <div class="sec-eyebrow">Depoimentos</div>
     <div class="sec-title">Quem usa, aprova.</div>
     <div class="testi-grid">
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Antes eu perdia 3 ou 4 clientes por semana porque não conseguia responder no horário. Agora o sistema responde na hora, qualquer hora. Minha agenda tá sempre cheia."</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rodrigo Mendes 🇧🇷</div><div class="testi-role">São Paulo, SP — Intermediário</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"O lembrete automático reduziu as faltas em quase 80%. Valeu cada centavo. Recomendo para qualquer prestador de serviço."</div><div class="testi-author"><div class="testi-av">F</div><div><div class="testi-name">Felipe Carvalho 🇧🇷</div><div class="testi-role">Belo Horizonte, MG — Premium</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"I was skeptical at first. After the first week I was completely sold. Revenue went up 30% in the first month alone."</div><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Marcus Johnson 🇺🇸</div><div class="testi-role">Miami, FL — Intermediate</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tenho 3 profissionais e o Google Calendar integrado foi o que me convenceu. Acabou a bagunça de controlar tudo no papel."</div><div class="testi-author"><div class="testi-av">W</div><div><div class="testi-name">Wallace Oliveira 🇧🇷</div><div class="testi-role">Curitiba, PR — Premium</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Comecei com o Básico pra testar. Em 2 semanas economizei mais de 5h por semana. Fiz upgrade pro Premium no mês seguinte."</div><div class="testi-author"><div class="testi-av">T</div><div><div class="testi-name">Thiago Souza 🇧🇷</div><div class="testi-role">Rio de Janeiro, RJ — Premium</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Setup was done for me, I didn't touch anything technical. Best investment I made for my business."</div><div class="testi-author"><div class="testi-av">D</div><div><div class="testi-name">Diego Ramirez 🇺🇸</div><div class="testi-role">Los Angeles, CA — Premium</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tenho uma barbearia aqui em Orlando há 6 anos e sempre perdi cliente por não responder rápido. Desde que instalei, minha agenda lotou em duas semanas. Melhor investimento que fiz no negócio."</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Anderson Lima 🇧🇷</div><div class="testi-role">Orlando, FL — Intermediário</div></div></div></div>
-
-      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Sou manicure aqui em Newark e não falava inglês fluente pra responder cliente. O agente responde em inglês e português sozinho. Agora não perco mais ninguém por causa do idioma."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Patricia Nunes 🇧🇷</div><div class="testi-role">Newark, NJ — Básico</div></div></div></div>
-
+      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Antes eu perdia 3 ou 4 clientes por semana porque não conseguia responder no horário. Agora o sistema responde na hora, qualquer hora. Minha agenda tá sempre cheia."</div><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-name">Rodrigo Mendes 🇧🇷</div><div class="testi-role">São Paulo, SP</div></div></div></div>
+      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"O lembrete automático reduziu as faltas em quase 80%. Valeu cada centavo. Recomendo para qualquer prestador de serviço."</div><div class="testi-author"><div class="testi-av">F</div><div><div class="testi-name">Felipe Carvalho 🇧🇷</div><div class="testi-role">Belo Horizonte, MG</div></div></div></div>
+      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"I was skeptical at first. After the first week I was completely sold. Revenue went up 30% in the first month alone."</div><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Marcus Johnson 🇺🇸</div><div class="testi-role">Miami, FL</div></div></div></div>
+      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tenho 3 profissionais e o Google Calendar integrado foi o que me convenceu. Acabou a bagunça de controlar tudo no papel."</div><div class="testi-author"><div class="testi-av">W</div><div><div class="testi-name">Wallace Oliveira 🇧🇷</div><div class="testi-role">Curitiba, PR</div></div></div></div>
+      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Tenho uma barbearia aqui em Orlando há 6 anos e sempre perdi cliente por não responder rápido. Desde que instalei, minha agenda lotou em duas semanas."</div><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Anderson Lima 🇧🇷</div><div class="testi-role">Orlando, FL</div></div></div></div>
+      <div class="testi"><div class="testi-stars">★★★★★</div><div class="testi-text">"Sou manicure aqui em Newark e não falava inglês fluente pra responder cliente. O agente responde em inglês e português sozinho. Agora não perco mais ninguém."</div><div class="testi-author"><div class="testi-av">P</div><div><div class="testi-name">Patricia Nunes 🇧🇷</div><div class="testi-role">Newark, NJ</div></div></div></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ FAQ ════════════════════════════════════════════════════════════ -->
 <section class="section">
   <div class="sec-eyebrow">Dúvidas frequentes</div>
   <div class="sec-title">Ficou alguma dúvida?</div>
   <div class="faq">
     <div class="faq-item"><div class="faq-q">Preciso saber programar para usar?<span class="faq-icon">+</span></div><div class="faq-a">Não. A instalação é feita por nós de forma customizada para o seu negócio. Você só precisa ter o WhatsApp Business configurado.</div></div>
-    <div class="faq-item"><div class="faq-q">Funciona para qualquer tipo de negócio?<span class="faq-icon">+</span></div><div class="faq-a">Sim, mas é preciso configurar de acordo com o seu negócio. O sistema foi desenvolvido para negócios que trabalham com agendamentos — barbearias, salões, clínicas, personal trainers, pet shops, estúdios e outros. Entre em contato para uma análise personalizada.</div></div>
-    <div class="faq-item"><div class="faq-q">Quantos profissionais posso ter?<span class="faq-icon">+</span></div><div class="faq-a">Os planos padrão incluem até 3 profissionais. Para mais, entre em contato com o suporte ou escolha o plano Customizado para um escopo personalizado.</div></div>
-    <div class="faq-item"><div class="faq-q">Posso mudar de plano depois?<span class="faq-icon">+</span></div><div class="faq-a">Sim. Upgrade a qualquer momento. Você paga apenas a diferença do setup e a nova mensalidade começa no próximo ciclo.</div></div>
-    <div class="faq-item"><div class="faq-q">O que acontece se eu não pagar a mensalidade?<span class="faq-icon">+</span></div><div class="faq-a">O sistema é bloqueado automaticamente. Você recebe uma notificação pelo WhatsApp. Ao regularizar o pagamento, é reativado imediatamente.</div></div>
-    <div class="faq-item"><div class="faq-q">Quanto tempo leva a instalação customizada?<span class="faq-icon">+</span></div><div class="faq-a">A instalação é feita pela nossa equipe em menos de 24 horas após a confirmação do pagamento, totalmente personalizada para o seu negócio.</div></div>
+    <div class="faq-item"><div class="faq-q">Funciona para qualquer tipo de negócio?<span class="faq-icon">+</span></div><div class="faq-a">Sim, mas é preciso configurar de acordo com o seu negócio. O sistema foi desenvolvido para negócios que trabalham com agendamentos — barbearias, salões, clínicas, personal trainers, pet shops, estúdios e outros.</div></div>
+    <div class="faq-item"><div class="faq-q">Quantos profissionais posso ter?<span class="faq-icon">+</span></div><div class="faq-a">O plano inclui até 3 profissionais. Para mais, entre em contato com o suporte para uma proposta personalizada.</div></div>
+    <div class="faq-item"><div class="faq-q">Posso cancelar a qualquer momento?<span class="faq-icon">+</span></div><div class="faq-a">Sim. Sem fidelidade, sem multa. Basta cancelar e o sistema é desativado ao final do período pago.</div></div>
+    <div class="faq-item"><div class="faq-q">O que acontece se eu não pagar a mensalidade?<span class="faq-icon">+</span></div><div class="faq-a">O sistema é bloqueado automaticamente. Você recebe uma notificação. Ao regularizar, é reativado imediatamente.</div></div>
+    <div class="faq-item"><div class="faq-q">Quanto tempo leva a instalação?<span class="faq-icon">+</span></div><div class="faq-a">A instalação é feita pela nossa equipe em menos de 24 horas após a confirmação do pagamento, totalmente personalizada para o seu negócio.</div></div>
+    <div class="faq-item"><div class="faq-q">E a garantia de 7 dias?<span class="faq-icon">+</span></div><div class="faq-a">Se em 7 dias você não ficar satisfeito com o sistema, devolvemos 100% do valor pago. Sem perguntas.</div></div>
   </div>
 </section>
 
-<!-- ═══ CTA FINAL ══════════════════════════════════════════════════════ -->
 <div class="cta-final">
   <h2>Pare de perder clientes<br/><span style="background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">por falta de resposta.</span></h2>
   <p>Enquanto você trabalha, o sistema agenda. Enquanto você dorme, o sistema confirma.</p>
-  <a href="#pricing" class="btn-primary" style="font-size:15px;padding:14px 32px;">Quero meu sistema agora →</a>
+  <a href="https://buy.stripe.com/28E3cu1VMdjldaEgv19EI02" target="_blank" class="btn-primary" style="font-size:15px;padding:14px 32px;">Quero meu sistema — $29,99/mês →</a>
   <div class="cta-pills" style="margin-top:28px;">
+    <span class="cta-pill">Tudo incluso</span>
     <span class="cta-pill">Instalação customizada</span>
-    <span class="cta-pill">Suporte via WhatsApp</span>
+    <span class="cta-pill">Garantia de 7 dias</span>
     <span class="cta-pill">Cancele quando quiser</span>
   </div>
 </div>
 
-<!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-logo">INTELLIGENT <span>AGENT</span><div style="font-size:11px;color:var(--text3);font-weight:400;letter-spacing:.02em;margin-top:3px;">Automação inteligente para prestadores de serviço</div></div>
   <div class="footer-links">
     <a href="#como">Como funciona</a>
-    <a href="#pricing">Planos</a>
+    <a href="#pricing">Plano</a>
     <a href="#depoimentos">Depoimentos</a>
     <a href="https://wa.me/14158795990" target="_blank">Suporte</a>
   </div>
   <div class="footer-copy">© 2026 Intelligent Agent. Todos os direitos reservados.</div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/14158795990" target="_blank" class="wa-float" title="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
